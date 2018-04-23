@@ -8,5 +8,5 @@ docker \
   -t \
   --name aria-docset \
   --rm \
-  ruby \
+  jgwhite/aria-docset \
   /bin/bash
