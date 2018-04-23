@@ -20,6 +20,7 @@ SOURCE_URL = "https://www.w3.org/TR/wai-aria-1.1/"
 SOURCE_DOC = Nokogiri::HTML(open(SOURCE_URL))
 
 def section_to_html(section)
+  section.at_css("span.permalink").remove
   resource = section["resource"]
   builder = Nokogiri::HTML::Builder.new do |b|
     b.html do
