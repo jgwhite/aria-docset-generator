@@ -5,11 +5,16 @@ require 'nokogiri'
 require 'fileutils'
 require 'pry'
 
+STDOUT.sync = true
+
 BASE_PATH = File.expand_path("../", __dir__)
-RESOURCES_PATH = File.join(BASE_PATH, "Contents", "Resources")
+FILES_PATH = File.join(BASE_PATH, "files")
+BUILD_PATH = File.join(BASE_PATH, "aria.docset")
+RESOURCES_PATH = File.join(BUILD_PATH, "Contents", "Resources")
 INDEX_PATH = File.join(RESOURCES_PATH, "docSet.dsidx")
 DOCUMENTS_PATH = File.join(RESOURCES_PATH, "Documents")
-CSS = File.read(File.join(BASE_PATH, "styles.css"))
+CSS = File.read(File.join(FILES_PATH, "styles.css"))
+INFO = File.read(File.join(FILES_PATH, "Info.plist"))
 
 SOURCE_URL = "https://www.w3.org/TR/wai-aria-1.1/"
 SOURCE_DOC = Nokogiri::HTML(open(SOURCE_URL))
@@ -33,11 +38,21 @@ def section_to_html(section)
   builder.to_html
 end
 
-FileUtils.rm_f(INDEX_PATH)
-FileUtils.rm_f(Dir[File.join(DOCUMENTS_PATH, "*")])
+puts "==> Removing existing build"
+FileUtils.rm_rf(BUILD_PATH)
 
+puts "==> Creating build dir"
+FileUtils.mkdir_p(DOCUMENTS_PATH)
+
+puts "==> Creating Info.plist"
+File.open(File.join(BUILD_PATH, "Contents", "Info.plist"), "w") do |info|
+  info << INFO
+end
+
+puts "==> Creating Index"
 IO.popen(["sqlite3", INDEX_PATH], "w") do |db|
 
+  puts "==> Creating Table"
   db << "CREATE TABLE searchIndex(id INTEGER PRIMARY KEY, name TEXT, type TEXT, path TEXT);\n"
   db << "CREATE UNIQUE INDEX anchor ON searchIndex (name, type, path);\n"
 
@@ -46,6 +61,8 @@ IO.popen(["sqlite3", INDEX_PATH], "w") do |db|
     type = "Class"
     fn = section["resource"][1..-1]
     path = "#{fn}.html"
+
+    puts "==> Adding #{name}"
 
     File.open(File.join(DOCUMENTS_PATH, path), "w") do |file|
       file << section_to_html(section)
@@ -60,6 +77,8 @@ IO.popen(["sqlite3", INDEX_PATH], "w") do |db|
     fn = section["resource"][1..-1]
     path = "#{fn}.html"
 
+    puts "==> Adding #{name}"
+
     File.open(File.join(DOCUMENTS_PATH, path), "w") do |file|
       file << section_to_html(section)
     end
@@ -68,3 +87,5 @@ IO.popen(["sqlite3", INDEX_PATH], "w") do |db|
   end
 
 end
+
+puts "==> Done ☺️"
