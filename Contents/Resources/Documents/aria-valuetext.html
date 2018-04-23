@@ -1,0 +1,50 @@
+<section class="property notoc" id="aria-valuetext" typeof="bibo:Chapter" resource="#aria-valuetext" property="bibo:hasPart">
+			<h4 id="aria-valuetext-property" resource="#aria-valuetext-property"><span property="xhv:role" resource="xhv:heading"><span class="property-name" title="aria-valuetext" aria-describedby="desc-aria-valuetext"><code>aria-valuetext</code> <span class="type-indicator">(property)</span></span><span class="permalink" typeof="bookmark"><a href="#aria-valuetext" aria-label="Permalink for aria-valuetext (property)" title="Permalink for aria-valuetext (property)" property="url"><span property="title" content="aria-valuetext (property)">§</span></a></span></span></h4>
+			<div class="property-description" id="desc-aria-valuetext" role="definition">
+				<p>Defines the human readable text alternative of <a href="#aria-valuenow" class="property-reference"><code>aria-valuenow</code></a> for a range <a href="#dfn-widget" class="internalDFN" data-link-type="dfn">widget</a>.</p>
+				<p>This property is used, for example, on a range widget such as a slider or progress bar.</p>
+				<p>If the <a href="#aria-valuetext" class="property-reference"><code>aria-valuetext</code></a> attribute is set, authors <em class="rfc2119" title="SHOULD">SHOULD</em> also set the <code>aria-valuenow</code> attribute, unless that value is unknown (for example, on an indeterminate <a href="#progressbar" class="role-reference"><code>progressbar</code></a>).</p>
+				<p>Authors <em class="rfc2119" title="SHOULD">SHOULD</em> only set the <code>aria-valuetext</code> attribute when the rendered value cannot be meaningfully represented as a number. For example, a slider may have rendered values of <code>small</code>, <code>medium</code>, and <code>large</code>. In this case, the values of <code>aria-valuenow</code> could range from 1 through 3, which indicate the position of each value in the value space, but the <code>aria-valuetext</code> would be one of the strings: <code>small</code>, <code>medium</code>, or <code>large</code>. If the <code>aria-valuetext</code> attribute is absent, the <a href="#dfn-assistive-technology" class="internalDFN" data-link-type="dfn">assistive technologies</a> will rely solely on the <code>aria-valuenow</code> attribute for the current value.</p>
+				<p>If aria-valuetext is specified, assistive technologies <em class="rfc2119" title="SHOULD">SHOULD</em> render that value instead of the value of <code>aria-valuenow</code>.</p>
+			</div>
+			<table class="property-features">
+				<caption>Characteristics:</caption>
+				<thead>
+					<tr>
+						<th scope="col">Characteristic</th>
+						<th scope="col">Value</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th class="property-related-head" scope="row">Related Concepts:</th>
+						<td class="property-related">
+<cite><a href="https://www.w3.org/TR/2007/REC-xforms-20071029/">XForms</a></cite> [<cite><a class="bibref" href="#bib-XFORMS10">XFORMS10</a></cite>] range, start</td>
+					</tr>
+					<tr>
+						<th class="property-applicability-head" scope="row">Used in Roles:</th>
+						<td class="property-applicability">
+<ul>
+<li><a href="#range" class="role-reference"><code>range</code></a></li>
+<li><a href="#separator" class="role-reference"><code>separator</code></a></li>
+</ul>
+</td>
+					</tr>
+					<tr>
+						<th class="property-descendants-head" scope="row">Inherits into Roles:</th>
+						<td class="property-descendants">
+<ul>
+<li><a href="#progressbar" class="role-reference"><code>progressbar</code></a></li>
+<li><a href="#scrollbar" class="role-reference"><code>scrollbar</code></a></li>
+<li><a href="#slider" class="role-reference"><code>slider</code></a></li>
+<li><a href="#spinbutton" class="role-reference"><code>spinbutton</code></a></li>
+</ul>
+</td>
+					</tr>
+					<tr>
+						<th class="property-value-head" scope="row">Value:</th>
+						<td class="property-value"><a href="#valuetype_string">string</a></td>
+					</tr>
+				</tbody>
+			</table>
+		</section>

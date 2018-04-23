@@ -1,0 +1,105 @@
+<section class="role notoc" id="columnheader" typeof="bibo:Chapter" resource="#columnheader" property="bibo:hasPart">
+			<h4 class="role-name" title="columnheader" aria-describedby="desc-columnheader" id="columnheader-0" resource="#columnheader-0"><span property="xhv:role" resource="xhv:heading"><code>columnheader</code> <span class="type-indicator">(role)</span><span class="permalink" typeof="bookmark"><a href="#columnheader" aria-label="Permalink for columnheader (role)" title="Permalink for columnheader (role)" property="url"><span property="title" content="columnheader (role)">§</span></a></span></span></h4>
+			<div class="role-description" id="desc-columnheader" role="definition">
+				<p>A cell containing header information for a column.</p>
+				<p><code>columnheader</code> can be used as a column header in a table or grid. It could also be used in a pie chart to show a similar <a href="#dfn-relationship" class="internalDFN" data-link-type="dfn">relationship</a> in the data.</p>
+				<p>The <code>columnheader</code> establishes a relationship between it and all cells in the corresponding column. It is the structural equivalent to an <abbr title="Hypertext Markup Language">HTML</abbr> <code>th</code> <a href="#dfn-element" class="internalDFN" data-link-type="dfn">element</a> with a column scope.</p>
+				<p>Authors <em class="rfc2119" title="MUST">MUST</em> ensure <a href="#dfn-element" class="internalDFN" data-link-type="dfn">elements</a> with <a href="#dfn-role" class="internalDFN" data-link-type="dfn">role</a> <code>columnheader</code> are contained in, or owned by, an element with the role <a href="#row" class="role-reference"><code>row</code></a>.</p>
+				<p>Applying the <a href="#aria-selected" class="state-reference"><code>aria-selected</code></a> state on a columnheader <em class="rfc2119" title="MUST">MUST</em> not cause the user agent to automatically propagate the <code>aria-selected</code> state to all the cells in the corresponding column. An author <em class="rfc2119" title="MAY">MAY</em> choose to propagate selection in this manner depending on the specific application.</p>
+				<p>While the <code>columnheader</code> role can be used in both interactive grids and non-interactive tables, the use of <a href="#aria-readonly" class="property-reference"><code>aria-readonly</code></a> and <a href="#aria-required" class="property-reference"><code>aria-required</code></a> is only applicable to interactive elements. Therefore, authors <em class="rfc2119" title="SHOULD NOT">SHOULD NOT</em> use <code>aria-required</code> or <code>aria-readonly</code> in a <code>columnheader</code> that descends from a <a href="#table" class="role-reference"><code>table</code></a>, and user agents <em class="rfc2119" title="SHOULD NOT">SHOULD NOT</em> expose either property to <a href="#dfn-assistive-technology" class="internalDFN" data-link-type="dfn">assistive technologies</a> unless the <code>columnheader</code> descends from a <a href="#grid" class="role-reference"><code>grid</code></a>.</p>
+				<div class="note">
+<div role="heading" class="note-title marker" id="h-note-9" aria-level="5"><span>Note</span></div>
+<p class="">Because cells are organized into rows, there is not a single container element for the column. The column is the set of <a href="#gridcell" class="role-reference"><code>gridcell</code></a> elements in a particular position within their respective <code>row</code> containers.</p>
+</div>
+			</div>
+			<table class="role-features">
+				<caption>Characteristics:</caption>
+				<thead>
+					<tr>
+						<th scope="col">Characteristic</th>
+						<th scope="col">Value</th>
+					</tr>
+				</thead>
+				<tbody>
+					
+					<tr>
+						<th class="role-parent-head" scope="row">Superclass Role:</th>
+						<td class="role-parent">
+							<ul>
+								<li><a href="#cell" class="role-reference"><code>cell</code></a></li>
+								<li><a href="#gridcell" class="role-reference"><code>gridcell</code></a></li>
+								<li><a href="#sectionhead" class="role-reference"><code>sectionhead</code></a></li>
+							</ul>
+						</td>
+					</tr>
+					
+					<tr>
+						<th class="role-base-head" scope="row">Base Concept:</th>
+						<td class="role-base"><a href="https://www.w3.org/TR/html5/tabular-data.html#element-attrdef-th-scope"><abbr title="Hypertext Markup Language">HTML</abbr> <code>th[scope="col"]</code></a></td>
+					</tr>
+					
+					<tr>
+						<th class="role-scope-head" scope="row">Required Context Role:</th>
+						<td class="role-scope"><a href="#row" class="role-reference"><code>row</code></a></td>
+					</tr>
+					
+					
+					<tr>
+						<th class="role-properties-head" scope="row">Supported States and Properties:</th>
+						<td class="role-properties"><a href="#aria-sort" class="property-reference"><code>aria-sort</code></a></td>
+					</tr>
+					<tr>
+						<th class="role-inherited-head" scope="row">Inherited States and Properties:</th>
+						<td class="role-inherited">
+<ul>
+<li><a href="#aria-atomic" class="property-reference"><code>aria-atomic</code></a></li>
+<li><a href="#aria-busy" class="state-reference"><code>aria-busy (state)</code></a></li>
+<li><a href="#aria-colindex" class="property-reference"><code>aria-colindex</code></a></li>
+<li><a href="#aria-colspan" class="property-reference"><code>aria-colspan</code></a></li>
+<li><a href="#aria-controls" class="property-reference"><code>aria-controls</code></a></li>
+<li><a href="#aria-current" class="state-reference"><code>aria-current (state)</code></a></li>
+<li><a href="#aria-describedby" class="property-reference"><code>aria-describedby</code></a></li>
+<li><a href="#aria-details" class="property-reference"><code>aria-details</code></a></li>
+<li><a href="#aria-disabled" class="state-reference"><code>aria-disabled (state)</code></a></li>
+<li><a href="#aria-dropeffect" class="property-reference"><code>aria-dropeffect</code></a></li>
+<li><a href="#aria-errormessage" class="property-reference"><code>aria-errormessage</code></a></li>
+<li><a href="#aria-expanded" class="state-reference"><code>aria-expanded (state)</code></a></li>
+<li><a href="#aria-flowto" class="property-reference"><code>aria-flowto</code></a></li>
+<li><a href="#aria-grabbed" class="state-reference"><code>aria-grabbed (state)</code></a></li>
+<li><a href="#aria-haspopup" class="property-reference"><code>aria-haspopup</code></a></li>
+<li><a href="#aria-hidden" class="state-reference"><code>aria-hidden (state)</code></a></li>
+<li><a href="#aria-invalid" class="state-reference"><code>aria-invalid (state)</code></a></li>
+<li><a href="#aria-keyshortcuts" class="property-reference"><code>aria-keyshortcuts</code></a></li>
+<li><a href="#aria-label" class="property-reference"><code>aria-label</code></a></li>
+<li><a href="#aria-labelledby" class="property-reference"><code>aria-labelledby</code></a></li>
+<li><a href="#aria-live" class="property-reference"><code>aria-live</code></a></li>
+<li><a href="#aria-owns" class="property-reference"><code>aria-owns</code></a></li>
+<li><a href="#aria-readonly" class="property-reference"><code>aria-readonly</code></a></li>
+<li><a href="#aria-relevant" class="property-reference"><code>aria-relevant</code></a></li>
+<li><a href="#aria-required" class="property-reference"><code>aria-required</code></a></li>
+<li><a href="#aria-roledescription" class="property-reference"><code>aria-roledescription</code></a></li>
+<li><a href="#aria-rowindex" class="property-reference"><code>aria-rowindex</code></a></li>
+<li><a href="#aria-rowspan" class="property-reference"><code>aria-rowspan</code></a></li>
+<li><a href="#aria-selected" class="state-reference"><code>aria-selected (state)</code></a></li>
+</ul>
+</td>
+					</tr>
+					<tr>
+						<th class="role-namefrom-head" scope="row">Name From:</th>
+						<td class="role-namefrom">
+							<ul>
+								<li>contents</li>
+								<li>author</li>
+							</ul>
+						</td>
+					</tr>
+					<tr>
+						<th class="role-namerequired-head" scope="row">Accessible Name Required:</th>
+						<td class="role-namerequired">True</td>
+					</tr>
+					
+					
+					
+				</tbody>
+			</table>
+		</section>

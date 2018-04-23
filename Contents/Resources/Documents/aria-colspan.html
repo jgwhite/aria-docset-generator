@@ -1,0 +1,42 @@
+<section class="property notoc" id="aria-colspan" typeof="bibo:Chapter" resource="#aria-colspan" property="bibo:hasPart">
+			<h4 id="aria-colspan-property" resource="#aria-colspan-property"><span property="xhv:role" resource="xhv:heading"><span class="property-name" title="aria-colspan" aria-describedby="desc-aria-colspan"><code>aria-colspan</code> <span class="type-indicator">(property)</span></span><span class="permalink" typeof="bookmark"><a href="#aria-colspan" aria-label="Permalink for aria-colspan (property)" title="Permalink for aria-colspan (property)" property="url"><span property="title" content="aria-colspan (property)">§</span></a></span></span></h4>
+			<div class="property-description" id="desc-aria-colspan" role="definition">
+				<p>Defines the number of columns spanned by a cell or gridcell within a <a href="#table" class="role-reference"><code>table</code></a>, <a href="#grid" class="role-reference"><code>grid</code></a>, or <a href="#treegrid" class="role-reference"><code>treegrid</code></a>. See related <a href="#aria-colindex" class="property-reference"><code>aria-colindex</code></a> and <a href="#aria-rowspan" class="property-reference"><code>aria-rowspan</code></a>.</p>
+				<p>This <a href="#dfn-attribute" class="internalDFN" data-link-type="dfn">attribute</a> is intended for cells and gridcells which are not contained in a native table. When defining the column span of cells or gridcells in a native table, authors <em class="rfc2119" title="SHOULD">SHOULD</em> use the host language's attribute instead of <a href="#aria-colspan" class="property-reference"><code>aria-colspan</code></a>. If <code>aria-colspan</code> is used on an element for which the host language provides an equivalent attribute, <a href="#dfn-user-agent" class="internalDFN" data-link-type="dfn">user agents</a> <em class="rfc2119" title="MUST">MUST</em> ignore the value of <code>aria-colspan</code> and instead expose the value of the host language's attribute to <a href="#dfn-assistive-technology" class="internalDFN" data-link-type="dfn">assistive technologies</a>.</p>
+				<p>Authors <em class="rfc2119" title="MUST">MUST</em> set the <span>value</span> of <code>aria-colspan</code> to an integer greater than or equal to 1 and less than the value which would cause the cell or gridcell to overlap the next cell or gridcell in the same row.</p>
+			</div>
+			<table class="property-features">
+				<caption>Characteristics:</caption>
+				<thead>
+					<tr>
+						<th scope="col">Characteristic</th>
+						<th scope="col">Value</th>
+					</tr>
+				</thead>
+				<tbody>
+					
+					<tr>
+						<th class="property-applicability-head" scope="row">Used in Roles:</th>
+						<td class="property-applicability">
+<ul>
+<li><a href="#cell" class="role-reference"><code>cell</code></a></li>
+</ul>
+</td>
+					</tr>
+					<tr>
+						<th class="property-descendants-head" scope="row">Inherits into Roles:</th>
+						<td class="property-descendants">
+<ul>
+<li><a href="#columnheader" class="role-reference"><code>columnheader</code></a></li>
+<li><a href="#gridcell" class="role-reference"><code>gridcell</code></a></li>
+<li><a href="#rowheader" class="role-reference"><code>rowheader</code></a></li>
+</ul>
+</td>
+					</tr>
+					<tr>
+						<th class="property-value-head" scope="row">Value:</th>
+						<td class="property-value"><a href="#valuetype_integer">integer</a></td>
+					</tr>
+				</tbody>
+			</table>
+		</section>

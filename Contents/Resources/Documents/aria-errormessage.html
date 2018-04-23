@@ -1,0 +1,39 @@
+<section class="property notoc" id="aria-errormessage" typeof="bibo:Chapter" resource="#aria-errormessage" property="bibo:hasPart">
+			<h4 id="aria-errormessage-property" resource="#aria-errormessage-property"><span property="xhv:role" resource="xhv:heading"><span class="property-name" title="aria-errormessage" aria-describedby="desc-aria-errormessage"><code>aria-errormessage</code> <span class="type-indicator">(property)</span></span><span class="permalink" typeof="bookmark"><a href="#aria-errormessage" aria-label="Permalink for aria-errormessage (property)" title="Permalink for aria-errormessage (property)" property="url"><span property="title" content="aria-errormessage (property)">§</span></a></span></span></h4>
+			<div class="property-description" id="desc-aria-errormessage" role="definition">
+				<p>Identifies the <a href="#dfn-element" class="internalDFN" data-link-type="dfn">element</a> that provides an error message for the <a href="#dfn-object" class="internalDFN" data-link-type="dfn">object</a>.  See related <a href="#aria-invalid" class="state-reference"><code>aria-invalid</code></a> and <a href="#aria-describedby" class="property-reference"><code>aria-describedby</code></a>. </p>
+				<p>The <code>aria-errormessage</code> attribute references another element that contains custom error message text. Authors <em class="rfc2119" title="MUST">MUST</em> use <code>aria-invalid</code> in conjunction with <code>aria-errormessage</code>. Initially, the object is in a valid state and either has <code>aria-invalid</code> set to <code>false</code> or no <code>aria-invalid</code> attribute, and the element referenced by <code>aria-errormessage</code> is not applicable.  If the user enters an invalid value for the object, <code>aria-invalid</code> is set to <code>true</code> to indicate that <code>aria-errormessage</code> is now pertinent. When <code>aria-errormessage</code> is pertinent, authors <em class="rfc2119" title="MUST">MUST</em> ensure the content is not hidden and is included in a container that exposes the content to the user as it is expected that the assistive technology user will navigate to the content in order to access it.</p>
+				<p>Authors <em class="rfc2119" title="MAY">MAY</em> use live regions for the error message <a href="#dfn-element" class="internalDFN" data-link-type="dfn">element</a> applying either an <a href="#aria-live" class="property-reference"><code>aria-live</code></a> property or using one of the <a href="#live_region_roles">live region roles</a>, for example, <a href="#alert" class="role-reference"><code>alert</code></a>.  A live region scenario is when an error message is displayed to users only after they have provided invalid information.  The message describes what is wrong and advises users as to what is required.  For example, an error message might be, "Invalid time:  the time must be between 9:00 AM and 5:00 PM".  The following example shows the markup for the initial valid state and for the subsequent invalid state.  Note the changes to <code>aria-invalid</code> on the text input <a href="#dfn-object" class="internalDFN" data-link-type="dfn">object</a>, and to <code>aria-live</code> on the <a href="#dfn-element" class="internalDFN" data-link-type="dfn">element</a> containing the text of the error message:</p>
+				<div class="example">
+<div class="example-title marker"><span>Example 19</span></div>
+<pre class="highlight hljs xml" aria-busy="false" aria-live="polite"><span class="hljs-comment">&lt;!-- Initial valid state --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"startTime"</span>&gt;</span> Please enter a start time for the meeting: <span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"startTime"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">aria-errormessage</span>=<span class="hljs-string">"msgID"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">""</span> <span class="hljs-attr">aria-invalid</span>=<span class="hljs-string">"false"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"msgID"</span> <span class="hljs-attr">aria-live</span>=<span class="hljs-string">"off"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"visibility:hidden"</span>&gt;</span> Invalid time:  the time must be between 9:00 AM and 5:00 PM" <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- User has input an invalid value --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"startTime"</span>&gt;</span> Please enter a start time for the meeting: <span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"startTime"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">aria-errormessage</span>=<span class="hljs-string">"msgID"</span> <span class="hljs-attr">aria-invalid</span>=<span class="hljs-string">"true"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"11:30 PM"</span> &gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"msgID"</span> <span class="hljs-attr">aria-live</span>=<span class="hljs-string">"assertive"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"visibility:visible"</span>&gt;</span> Invalid time:  the time must be between 9:00 AM and 5:00 PM" <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></pre>
+</div>
+            </div>
+			<table class="property-features">
+				<caption>Characteristics:</caption>
+				<thead>
+					<tr>
+						<th scope="col">Characteristic</th>
+						<th scope="col">Value</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th class="property-applicability-head" scope="row">Used in Roles:</th>
+						<td class="property-applicability">All elements of the base markup</td>
+					</tr>
+					<tr>
+						<th class="property-value-head" scope="row">Value:</th>
+						<td class="property-value"><a href="#valuetype_idref">ID reference</a></td>
+					</tr>
+				</tbody>
+			</table>
+		</section>

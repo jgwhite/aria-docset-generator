@@ -1,0 +1,74 @@
+<section class="role notoc" id="main" typeof="bibo:Chapter" resource="#main" property="bibo:hasPart">
+			<h4 class="role-name" title="main" aria-describedby="desc-main" id="main-0" resource="#main-0"><span property="xhv:role" resource="xhv:heading"><code>main</code> <span class="type-indicator">(role)</span><span class="permalink" typeof="bookmark"><a href="#main" aria-label="Permalink for main (role)" title="Permalink for main (role)" property="url"><span property="title" content="main (role)">§</span></a></span></span></h4>
+			<div class="role-description" id="desc-main" role="definition">
+				<p>The main content of a document.</p>
+				<p>This marks the content that is directly related to or expands upon the central topic of the document. The <code>main</code> <a href="#dfn-role" class="internalDFN" data-link-type="dfn">role</a> is a non-obtrusive alternative for "skip to main content" links, where the navigation option to go to the main content (or other <a href="#dfn-landmark" class="internalDFN" data-link-type="dfn">landmarks</a>) is provided by the <a href="#dfn-user-agent" class="internalDFN" data-link-type="dfn">user agent</a> through a dialog or by <a href="#dfn-assistive-technology" class="internalDFN" data-link-type="dfn">assistive technologies</a>.</p>
+				<p>User agents <em class="rfc2119" title="SHOULD">SHOULD</em> treat elements with the role of <code>main</code> as navigational landmarks.</p>
+				<!-- keep the following paragraphs synced with the similar paragraphs in #banner and #contentinfo -->
+				<p>Within any <a href="#document" class="role-reference"><code>document</code></a> or <a href="#application" class="role-reference"><code>application</code></a>, the author <em class="rfc2119" title="SHOULD">SHOULD</em> mark no more than one <a href="#dfn-element" class="internalDFN" data-link-type="dfn">element</a> with the <code>main</code> role.</p>
+				<div class="note">
+<div role="heading" class="note-title marker" id="h-note-16" aria-level="5"><span>Note</span></div>
+<p class="">Because <code>document</code> and <code>application</code> elements can be nested in the <abbr title="Document Object Model">DOM</abbr>, they may have multiple <code>main</code> elements as <abbr title="Document Object Model">DOM</abbr> descendants, assuming each of those is associated with different document nodes, either by a <abbr title="Document Object Model">DOM</abbr> nesting (e.g., <code>document</code> within <code>document</code>) or by use of the <a href="#aria-owns" class="property-reference"><code>aria-owns</code></a> attribute.</p>
+</div>
+			</div>
+			<table class="role-features">
+				<caption>Characteristics:</caption>
+				<thead>
+					<tr>
+						<th scope="col">Characteristic</th>
+						<th scope="col">Value</th>
+					</tr>
+				</thead>
+				<tbody>
+					
+					<tr>
+						<th class="role-parent-head" scope="row">Superclass Role:</th>
+						<td class="role-parent"><a href="#landmark" class="role-reference"><code>landmark</code></a></td>
+					</tr>
+					
+					
+					
+					
+					
+					
+					
+					<tr>
+						<th class="role-inherited-head" scope="row">Inherited States and Properties:</th>
+						<td class="role-inherited">
+<ul>
+<li><a href="#aria-atomic" class="property-reference"><code>aria-atomic</code></a></li>
+<li><a href="#aria-busy" class="state-reference"><code>aria-busy (state)</code></a></li>
+<li><a href="#aria-controls" class="property-reference"><code>aria-controls</code></a></li>
+<li><a href="#aria-current" class="state-reference"><code>aria-current (state)</code></a></li>
+<li><a href="#aria-describedby" class="property-reference"><code>aria-describedby</code></a></li>
+<li><a href="#aria-details" class="property-reference"><code>aria-details</code></a></li>
+<li><a href="#aria-disabled" class="state-reference"><code>aria-disabled (state)</code></a></li>
+<li><a href="#aria-dropeffect" class="property-reference"><code>aria-dropeffect</code></a></li>
+<li><a href="#aria-errormessage" class="property-reference"><code>aria-errormessage</code></a></li>
+<li><a href="#aria-expanded" class="state-reference"><code>aria-expanded (state)</code></a></li>
+<li><a href="#aria-flowto" class="property-reference"><code>aria-flowto</code></a></li>
+<li><a href="#aria-grabbed" class="state-reference"><code>aria-grabbed (state)</code></a></li>
+<li><a href="#aria-haspopup" class="property-reference"><code>aria-haspopup</code></a></li>
+<li><a href="#aria-hidden" class="state-reference"><code>aria-hidden (state)</code></a></li>
+<li><a href="#aria-invalid" class="state-reference"><code>aria-invalid (state)</code></a></li>
+<li><a href="#aria-keyshortcuts" class="property-reference"><code>aria-keyshortcuts</code></a></li>
+<li><a href="#aria-label" class="property-reference"><code>aria-label</code></a></li>
+<li><a href="#aria-labelledby" class="property-reference"><code>aria-labelledby</code></a></li>
+<li><a href="#aria-live" class="property-reference"><code>aria-live</code></a></li>
+<li><a href="#aria-owns" class="property-reference"><code>aria-owns</code></a></li>
+<li><a href="#aria-relevant" class="property-reference"><code>aria-relevant</code></a></li>
+<li><a href="#aria-roledescription" class="property-reference"><code>aria-roledescription</code></a></li>
+</ul>
+</td>
+					</tr>
+					<tr>
+						<th class="role-namefrom-head" scope="row">Name From:</th>
+						<td class="role-namefrom">author</td>
+					</tr>
+					
+					
+					
+					
+				</tbody>
+			</table>
+		</section>

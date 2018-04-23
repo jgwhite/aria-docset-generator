@@ -1,0 +1,34 @@
+<section class="property notoc" id="aria-flowto" typeof="bibo:Chapter" resource="#aria-flowto" property="bibo:hasPart">
+			<h4 id="aria-flowto-property" resource="#aria-flowto-property"><span property="xhv:role" resource="xhv:heading"><span class="property-name" title="aria-flowto" aria-describedby="desc-aria-flowto"><code>aria-flowto</code> <span class="type-indicator">(property)</span></span><span class="permalink" typeof="bookmark"><a href="#aria-flowto" aria-label="Permalink for aria-flowto (property)" title="Permalink for aria-flowto (property)" property="url"><span property="title" content="aria-flowto (property)">§</span></a></span></span></h4>
+			<div class="property-description" id="desc-aria-flowto" role="definition">
+				<p>Identifies the next <a href="#dfn-element" class="internalDFN" data-link-type="dfn">element</a> (or elements) in an alternate reading order of content which, at the user's discretion, allows assistive technology to override the general default of reading in document source order.</p>
+				<p>When <a href="#aria-flowto" class="property-reference"><code>aria-flowto</code></a> has a single IDREF, it allows <a href="#dfn-assistive-technology" class="internalDFN" data-link-type="dfn">assistive technologies</a> to, at the user's request, forego normal document reading order and go to the targeted <a href="#dfn-object" class="internalDFN" data-link-type="dfn">object</a>. <!-- [No longer ref XHTML2] <pref>aria-flowto</pref> in subsequent elements would follow a process similar to <cite><a href="https://www.w3.org/TR/2006/WD-xhtml2-20060726/mod-hyperAttributes.html#adef_hyperAttributes_nextfocus">next focus in <abbr title="Extensible Hypertext Markup Language">XHTML</abbr>2</a></cite> ([[XHTML2]]). --> However, when <code>aria-flowto</code> is provided with multiple IDREFS, assistive technologies <em class="rfc2119" title="SHOULD">SHOULD</em> present the referenced elements as path choices.</p>
+				<p>In the case of one or more IDREFS, <a href="#dfn-user-agent" class="internalDFN" data-link-type="dfn">user agents</a> or assistive technologies <em class="rfc2119" title="SHOULD">SHOULD</em> give the user the option of navigating to any of the targeted elements. The name of the path can be determined by the name of the target element of the <code>aria-flowto</code> <a href="#dfn-attribute" class="internalDFN" data-link-type="dfn">attribute</a>. <a href="#dfn-accessibility-api" class="internalDFN" data-link-type="dfn">Accessibility <abbr title="Application Programing Interfaces">APIs</abbr></a> can provide named path <a href="#dfn-relationship" class="internalDFN" data-link-type="dfn">relationships</a>.</p>
+			</div>
+			<table class="property-features">
+				<caption>Characteristics:</caption>
+				<thead>
+					<tr>
+						<th scope="col">Characteristic</th>
+						<th scope="col">Value</th>
+					</tr>
+				</thead>
+				<tbody>
+					<!--
+					<tr>
+						<th class="property-related-head" scope="row">Related Concepts:</th>
+						<td class="property-related"><cite><a href="https://www.w3.org/TR/2006/WD-xhtml2-20060726/"><abbr title="Extensible Hypertext Markup Language">XHTML</abbr> 2</a></cite> [[XHTML2]] :nextfocus :prevfocus</td>
+					</tr>
+					-->
+					<tr>
+						<th class="property-applicability-head" scope="row">Used in Roles:</th>
+						<td class="property-applicability">All elements of the base markup</td>
+					</tr>
+					
+					<tr>
+						<th class="property-value-head" scope="row">Value:</th>
+						<td class="property-value"><a href="#valuetype_idref_list">ID reference list</a></td>
+					</tr>
+				</tbody>
+			</table>
+		</section>

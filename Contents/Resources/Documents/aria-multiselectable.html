@@ -1,0 +1,65 @@
+<section class="property notoc" id="aria-multiselectable" typeof="bibo:Chapter" resource="#aria-multiselectable" property="bibo:hasPart">
+			<h4 id="aria-multiselectable-property" resource="#aria-multiselectable-property"><span property="xhv:role" resource="xhv:heading"><span class="property-name" title="aria-multiselectable" aria-describedby="desc-aria-multiselectable"><code>aria-multiselectable</code> <span class="type-indicator">(property)</span></span><span class="permalink" typeof="bookmark"><a href="#aria-multiselectable" aria-label="Permalink for aria-multiselectable (property)" title="Permalink for aria-multiselectable (property)" property="url"><span property="title" content="aria-multiselectable (property)">§</span></a></span></span></h4>
+			<div class="property-description" id="desc-aria-multiselectable" role="definition">
+				<p>Indicates that the user may select more than one item from the current selectable descendants.</p>
+				<p>Authors <em class="rfc2119" title="SHOULD">SHOULD</em> ensure that selected descendants have the <a href="#aria-selected" class="state-reference"><code>aria-selected</code></a> <a href="#dfn-attribute" class="internalDFN" data-link-type="dfn">attribute</a> set to <code>true</code>, and selectable descendant have the <code>aria-selected</code> attribute set to <code>false</code>. Authors <em class="rfc2119" title="SHOULD NOT">SHOULD NOT</em> use the <code>aria-selected</code> attribute on descendants that are not selectable.</p>
+				<div class="note">
+<div role="heading" class="note-title marker" id="h-note-48" aria-level="5"><span>Note</span></div>
+<p class="">Lists and trees are examples of roles that might allow users to select more than one item at a time.</p>
+</div>
+			</div>
+			<table class="property-features">
+				<caption>Characteristics:</caption>
+				<thead>
+					<tr>
+						<th scope="col">Characteristic</th>
+						<th scope="col">Value</th>
+					</tr>
+				</thead>
+				<tbody>
+					
+					<tr>
+						<th class="property-applicability-head" scope="row">Used in Roles:</th>
+						<td class="property-applicability">
+<ul>
+<li><a href="#grid" class="role-reference"><code>grid</code></a></li>
+<li><a href="#listbox" class="role-reference"><code>listbox</code></a></li>
+<li><a href="#tablist" class="role-reference"><code>tablist</code></a></li>
+<li><a href="#tree" class="role-reference"><code>tree</code></a></li>
+</ul>
+</td>
+					</tr>
+					<tr>
+						<th class="property-descendants-head" scope="row">Inherits into Roles:</th>
+						<td class="property-descendants">
+<ul>
+<li><a href="#treegrid" class="role-reference"><code>treegrid</code></a></li>
+</ul>
+</td>
+					</tr>
+					<tr>
+						<th class="property-value-head" scope="row">Value:</th>
+						<td class="property-value"><a href="#valuetype_true-false">true/false</a></td>
+					</tr>
+				</tbody>
+			</table>
+			<table class="value-descriptions">
+				<caption>Values:</caption>
+				<thead>
+					<tr>
+						<th scope="col">Value</th>
+						<th scope="col">Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th class="value-name" scope="row"><strong class="default">false (default)</strong></th>
+						<td class="value-description">Only one item can be selected.</td>
+					</tr>
+					<tr>
+						<th class="value-name" scope="row">true</th>
+						<td class="value-description">More than one item in the widget may be selected at a time.</td>
+					</tr>
+				</tbody>
+			</table>
+		</section>

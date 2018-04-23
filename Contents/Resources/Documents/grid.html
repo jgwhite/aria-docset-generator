@@ -1,0 +1,129 @@
+<section class="role notoc" id="grid" typeof="bibo:Chapter" resource="#grid" property="bibo:hasPart">
+			<h4 class="role-name" title="grid" aria-describedby="desc-grid" id="grid-0" resource="#grid-0"><span property="xhv:role" resource="xhv:heading"><code>grid</code> <span class="type-indicator">(role)</span><span class="permalink" typeof="bookmark"><a href="#grid" aria-label="Permalink for grid (role)" title="Permalink for grid (role)" property="url"><span property="title" content="grid (role)">§</span></a></span></span></h4>
+			<div class="role-description" id="desc-grid" role="definition">
+				<p>A composite <a href="#widget" class="role-reference"><code>widget</code></a> containing a collection of one or more rows with one or more cells where some or all cells in the grid are focusable by using methods of two-dimensional navigation, such as directional arrow keys.</p>
+				<p>The <code>grid</code> role does not imply a specific visual, e.g., tabular, presentation. It describes <a href="#dfn-relationship" class="internalDFN" data-link-type="dfn">relationships</a> among <a href="#dfn-element" class="internalDFN" data-link-type="dfn">elements</a>. It may be used for purposes as simple as grouping a collection of checkboxes or navigation links or as complex as creating a full-featured spreadsheet application.</p>
+				<p>The cell elements of a <code>grid</code> have role <a href="#gridcell" class="role-reference"><code>gridcell</code></a>. Authors <em class="rfc2119" title="MAY">MAY</em> designate a cell as a row or column header by using either the <a href="#rowheader" class="role-reference"><code>rowheader</code></a> or <a href="#columnheader" class="role-reference"><code>columnheader</code></a> <a href="#dfn-role" class="internalDFN" data-link-type="dfn">role</a> in lieu of the <code>gridcell</code> role. Authors <em class="rfc2119" title="MUST">MUST</em> ensure elements with role <code>gridcell</code>, <code>columnheader</code>, or <code>rowheader</code> are <a href="#dfn-owned-element" class="internalDFN" data-link-type="dfn">owned</a> by elements with role <a href="#row" class="role-reference"><code>row</code></a>, which are in turn owned by an element with role <a href="#rowgroup" class="role-reference"><code>rowgroup</code></a>, or <code>grid</code>.</p>
+				<p>To be <a href="#dfn-keyboard-accessible" class="internalDFN" data-link-type="dfn">keyboard accessible</a>, authors <em class="rfc2119" title="SHOULD">SHOULD</em> manage focus of descendants of a <code>grid</code> as described in <a href="#managingfocus">Managing Focus</a>. When a user is navigating the <code>grid</code> content with a keyboard, authors <em class="rfc2119" title="SHOULD">SHOULD</em> set focus as follows:</p>
+				<ul>
+					<li>If a <code>gridcell</code> contains a single interactive <code>widget</code> that will not consume arrow key presses when it receives focus, such as a <a href="#checkbox" class="role-reference"><code>checkbox</code></a>, <a href="#button" class="role-reference"><code>button</code></a>, or <a href="#link" class="role-reference"><code>link</code></a>, authors <em class="rfc2119" title="MAY">MAY</em> set focus on the interactive element contained in that cell. This allows the contained widget to be directly operable.</li>
+					<li>Otherwise, authors <em class="rfc2119" title="SHOULD">SHOULD</em> ensure the element that receives focus is a <code>gridcell</code>, <code>rowheader</code>, or <code>columnheader</code> element.</li>
+				</ul>
+				<p>Authors <em class="rfc2119" title="SHOULD">SHOULD</em> provide a mechanism for changing to an interaction or edit mode that allows users to navigate and interact with content contained inside a focusable cell if that focusable cell contains any of the following:</p>
+				<ul>
+					<li>a widget that requires arrow keys to operate, e.g., a <a href="#combobox" class="role-reference"><code>combobox</code></a> or <a href="#radiogroup" class="role-reference"><code>radiogroup</code></a>
+</li>
+					<li>multiple interactive elements</li>
+					<li>editable content</li>
+				</ul>
+				<p>For example, if a cell in a spreadsheet contains a <code>combobox</code> or editable text, the <kbd>Enter</kbd> key might be used to activate a cell interaction or editing mode when that cell has focus so the directional arrow keys can be used to operate the contained <code>combobox</code> or <a href="#textbox" class="role-reference"><code>textbox</code></a>. Depending on the implementation, pressing <kbd>Enter</kbd> again, <kbd>Tab</kbd>, <kbd>Escape</kbd>, or another key may switch the application back to the grid navigation mode.</p>
+				<p>Authors <em class="rfc2119" title="MAY">MAY</em> use a <code>gridcell</code> to display the result of a formula, which could be editable by the user. In a spreadsheet application, for example, a <code>gridcell</code> may show a value calculated from a formula until the user activates the <code>gridcell</code> for editing when a <code>textbox</code> appears in the <code>gridcell</code> containing the formula in an editable state.</p>
+				<!-- make sure the following para remains synced with its counterpart in #treegrid -->
+				 <p>If <a href="#aria-readonly" class="property-reference"><code>aria-readonly</code></a> is set on an element with role <code>grid</code>, <a href="#dfn-user-agent" class="internalDFN" data-link-type="dfn">user agents</a> <em class="rfc2119" title="MUST">MUST</em> propagate the value to all <code>gridcell</code> elements owned by the <code>grid</code> and expose the value in the accessibility <abbr title="Application Programing Interfaces">API</abbr>. An author <em class="rfc2119" title="MAY">MAY</em> override the propagated value of <code>aria-readonly</code> for an individual <code>gridcell</code> element.</p>
+				 <p>In a <code>grid</code> that provides cell content editing functions, if the content of a focusable <code>gridcell</code> element is not editable, authors <em class="rfc2119" title="MAY">MAY</em> set <code>aria-readonly</code> to <code>true</code> on the <code>gridcell</code> element. However, the value of <code>aria-readonly</code>, whether specified for a <code>grid</code> or individual cells, only indicates whether the content contained in cells is editable. It does not represent availability of functions for navigating or manipulating the <code>grid</code> itself.</p>
+				 <p>An unspecified value for <code>aria-readonly</code> does not imply that a <code>grid</code> or a <code>gridcell</code> contains editable content. For example, if a <code>grid</code> presents a collection of elements that are not editable, such as a collection of <code>link</code> elements representing dates in a datepicker, it is not necessary for the author to specify a value for <code>aria-readonly</code>.</p>
+				<p>Authors <em class="rfc2119" title="MAY">MAY</em> indicate that a focusable <code>gridcell</code> is selectable as the object of an action with the <a href="#aria-selected" class="state-reference"><code>aria-selected</code></a> attribute. If the <code>grid</code> allows multiple <code>gridcell</code>s to be selected, the author <em class="rfc2119" title="SHOULD">SHOULD</em> set <a href="#aria-multiselectable" class="property-reference"><code>aria-multiselectable</code></a> to <code>true</code> on the element with role <code>grid</code>.</p>
+				<p>Since <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> can augment an element of the host language, a <code>grid</code> can reuse the elements and attributes of a native table, such as an <abbr title="Hypertext Markup Language">HTML</abbr> <code>table</code> element. For example, if an author applies the <code>grid</code> role to an <abbr title="Hypertext Markup Language">HTML</abbr> <code>table</code> element, the author does not need to apply the <code>row</code> and <code>gridcell</code> roles to the descendant <abbr title="Hypertext Markup Language">HTML</abbr> <code>tr</code> and <code>td</code> elements because the <a href="#dfn-user-agent" class="internalDFN" data-link-type="dfn">user agent</a> will automatically make the appropriate translations. When the author is reusing a native host language table element and needs a <code>gridcell</code> element to span multiple rows or columns, the author <em class="rfc2119" title="SHOULD">SHOULD</em> apply the appropriate host language attributes instead of <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> <a href="#aria-rowspan" class="property-reference"><code>aria-rowspan</code></a> or <a href="#aria-colspan" class="property-reference"><code>aria-colspan</code></a> properties.</p>
+				<p>See the <cite><a href="https://www.w3.org/TR/wai-aria-practices-1.1/"><abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> Authoring Practices Guide</a></cite> [<cite><a class="bibref" href="#bib-wai-aria-practices-1.1">wai-aria-practices-1.1</a></cite>] for additional details on implementing grid design patterns.</p>
+			</div>
+			<table class="role-features">
+				<caption>Characteristics:</caption>
+				<thead>
+					<tr>
+						<th scope="col">Characteristic</th>
+						<th scope="col">Value</th>
+					</tr>
+				</thead>
+				<tbody>
+					
+					<tr>
+						<th class="role-parent-head" scope="row">Superclass Role:</th>
+						<td class="role-parent">
+							<ul>
+								<li><a href="#composite" class="role-reference"><code>composite</code></a></li>
+								<li><a href="#table" class="role-reference"><code>table</code></a></li>
+							</ul>
+						</td>
+					</tr>
+					<tr>
+						<th class="role-children-head" scope="row">Subclass Roles:</th>
+						<td class="role-children">
+<ul>
+<li><a href="#treegrid" class="role-reference"><code>treegrid</code></a></li>
+</ul>
+</td>
+					</tr>
+					<tr>
+						<th class="role-base-head" scope="row">Base Concept:</th>
+						<td class="role-base"><a href="https://www.w3.org/TR/html5/tabular-data.html#the-table-element"><abbr title="Hypertext Markup Language">HTML</abbr> <code>table</code></a></td>
+					</tr>
+					
+					
+					<tr>
+						<th class="role-mustcontain-head" scope="row">Required Owned Elements:</th>
+						<td class="role-mustcontain">
+							<ul>
+								<li><a href="#row" class="role-reference"><code>row</code></a></li>
+								<li>
+<a href="#rowgroup" class="role-reference"><code>rowgroup</code></a> <abbr title="containing" class="symbol">→</abbr> <a href="#row" class="role-reference"><code>row</code></a>
+</li>
+							</ul>
+						</td>
+					</tr>
+					
+					<tr>
+						<th class="role-properties-head" scope="row">Supported States and Properties:</th>
+						<td class="role-properties">
+							<ul>
+								<li><a href="#aria-level" class="property-reference"><code>aria-level</code></a></li>
+								<li><a href="#aria-multiselectable" class="property-reference"><code>aria-multiselectable</code></a></li>
+								<li><a href="#aria-readonly" class="property-reference"><code>aria-readonly</code></a></li>
+							</ul>
+						</td>
+					</tr>
+					<tr>
+						<th class="role-inherited-head" scope="row">Inherited States and Properties:</th>
+						<td class="role-inherited">
+<ul>
+<li><a href="#aria-activedescendant" class="property-reference"><code>aria-activedescendant</code></a></li>
+<li><a href="#aria-atomic" class="property-reference"><code>aria-atomic</code></a></li>
+<li><a href="#aria-busy" class="state-reference"><code>aria-busy (state)</code></a></li>
+<li><a href="#aria-colcount" class="property-reference"><code>aria-colcount</code></a></li>
+<li><a href="#aria-controls" class="property-reference"><code>aria-controls</code></a></li>
+<li><a href="#aria-current" class="state-reference"><code>aria-current (state)</code></a></li>
+<li><a href="#aria-describedby" class="property-reference"><code>aria-describedby</code></a></li>
+<li><a href="#aria-details" class="property-reference"><code>aria-details</code></a></li>
+<li><a href="#aria-disabled" class="state-reference"><code>aria-disabled (state)</code></a></li>
+<li><a href="#aria-dropeffect" class="property-reference"><code>aria-dropeffect</code></a></li>
+<li><a href="#aria-errormessage" class="property-reference"><code>aria-errormessage</code></a></li>
+<li><a href="#aria-expanded" class="state-reference"><code>aria-expanded (state)</code></a></li>
+<li><a href="#aria-flowto" class="property-reference"><code>aria-flowto</code></a></li>
+<li><a href="#aria-grabbed" class="state-reference"><code>aria-grabbed (state)</code></a></li>
+<li><a href="#aria-haspopup" class="property-reference"><code>aria-haspopup</code></a></li>
+<li><a href="#aria-hidden" class="state-reference"><code>aria-hidden (state)</code></a></li>
+<li><a href="#aria-invalid" class="state-reference"><code>aria-invalid (state)</code></a></li>
+<li><a href="#aria-keyshortcuts" class="property-reference"><code>aria-keyshortcuts</code></a></li>
+<li><a href="#aria-label" class="property-reference"><code>aria-label</code></a></li>
+<li><a href="#aria-labelledby" class="property-reference"><code>aria-labelledby</code></a></li>
+<li><a href="#aria-live" class="property-reference"><code>aria-live</code></a></li>
+<li><a href="#aria-owns" class="property-reference"><code>aria-owns</code></a></li>
+<li><a href="#aria-relevant" class="property-reference"><code>aria-relevant</code></a></li>
+<li><a href="#aria-roledescription" class="property-reference"><code>aria-roledescription</code></a></li>
+<li><a href="#aria-rowcount" class="property-reference"><code>aria-rowcount</code></a></li>
+</ul>
+</td>
+					</tr>
+					<tr>
+						<th class="role-namefrom-head" scope="row">Name From:</th>
+						<td class="role-namefrom">author</td>
+					</tr>
+					<tr>
+						<th class="role-namerequired-head" scope="row">Accessible Name Required:</th>
+						<td class="role-namerequired">True</td>
+					</tr>
+					
+					
+					
+				</tbody>
+			</table>
+		</section>

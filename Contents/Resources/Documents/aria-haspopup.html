@@ -1,0 +1,83 @@
+<section class="property notoc" id="aria-haspopup" typeof="bibo:Chapter" resource="#aria-haspopup" property="bibo:hasPart">
+			<h4 id="aria-haspopup-property" resource="#aria-haspopup-property"><span property="xhv:role" resource="xhv:heading"><span class="property-name" title="aria-haspopup" aria-describedby="desc-aria-haspopup"><code>aria-haspopup</code> <span class="type-indicator">(property)</span></span><span class="permalink" typeof="bookmark"><a href="#aria-haspopup" aria-label="Permalink for aria-haspopup (property)" title="Permalink for aria-haspopup (property)" property="url"><span property="title" content="aria-haspopup (property)">§</span></a></span></span></h4>
+			<div class="property-description" id="desc-aria-haspopup" role="definition">
+				<p>Indicates the availability and type of interactive popup element, such as menu or dialog, that can be triggered by an <a href="#dfn-element" class="internalDFN" data-link-type="dfn">element</a>.</p>
+				<p>A popup element usually appears as a block of content that is on top of other content. Authors <em class="rfc2119" title="MUST">MUST</em> ensure that the role of the element that serves as the container for the popup content is <a href="#menu" class="role-reference"><code>menu</code></a>, <a href="#listbox" class="role-reference"><code>listbox</code></a>, <a href="#tree" class="role-reference"><code>tree</code></a>, <a href="#grid" class="role-reference"><code>grid</code></a>, or <a href="#dialog" class="role-reference"><code>dialog</code></a>, and that the value of <code>aria-haspopup</code> matches the role of the popup container.</p>
+        <p>For the popup element to be keyboard accessible, authors <em class="rfc2119" title="SHOULD">SHOULD</em> ensure that the element that can trigger the popup is focusable, that there is a keyboard mechanism for opening the popup, and that the popup element manages focus of all its descendants as described in <a href="#managingfocus">Managing Focus</a>.</p>
+        <p>The <code>aria-haspopup</code> property is an enumerated type. <a href="#dfn-user-agent" class="internalDFN" data-link-type="dfn">User agents</a> <em class="rfc2119" title="MUST">MUST</em> treat any value of <code>aria-haspopup</code> that is not included in the list of allowed values, including an empty string, as if the value <code>false</code> had been provided. To provide backward compatibility with ARIA 1.0 content, user agents <em class="rfc2119" title="MUST">MUST</em> treat an <code>aria-haspopup</code> value of <code>true</code> as equivalent to a value of <code>menu</code>.</p>
+        <p><a href="#dfn-assistive-technology" class="internalDFN" data-link-type="dfn">Assistive technologies</a> <em class="rfc2119" title="SHOULD NOT">SHOULD NOT</em> expose the <code>aria-haspopup</code> property if it has a value of <code>false</code>.</p>
+        <div class="note">
+<div role="heading" class="note-title marker" id="h-note-41" aria-level="5"><span>Note</span></div>
+<p class="">A <a href="#tooltip" class="role-reference"><code>tooltip</code></a> is not considered to be a popup in this context.</p>
+</div>
+			</div>
+			<table class="property-features">
+				<caption>Characteristics:</caption>
+				<thead>
+					<tr>
+						<th scope="col">Characteristic</th>
+						<th scope="col">Value</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th class="property-related-head" scope="row">Related Concepts:</th>
+						<td class="property-related">
+							<ul>
+								<li><a href="#aria-controls" class="property-reference"><code>aria-controls</code></a></li>
+								<li>
+<cite><a href="https://www.w3.org/TR/2002/REC-UAAG10-20021217/">User Agent Accessibility Guidelines</a></cite> [<cite><a class="bibref" href="#bib-UAAG10">UAAG10</a></cite>] conditional content</li>
+							</ul>
+						</td>
+					</tr>
+					<tr>
+						<th class="property-applicability-head" scope="row">Used in Roles:</th>
+						<td class="property-applicability">All elements of the base markup</td>
+					</tr>
+					
+					<tr>
+						<th class="property-value-head" scope="row">Value:</th>
+						<td class="property-value"><a href="#valuetype_token">token</a></td>
+					</tr>
+				</tbody>
+			</table>
+			<table class="value-descriptions">
+				<caption>Values:</caption>
+				<thead>
+					<tr>
+						<th scope="col">Value</th>
+						<th scope="col">Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th class="value-name" scope="row"><strong class="default">false (default)</strong></th>
+						<td class="value-description">Indicates the element does not have a popup.</td>
+					</tr>
+					<tr>
+						<th class="value-name" scope="row">true</th>
+						<td class="value-description">Indicates the popup is a <a href="#menu" class="role-reference"><code>menu</code></a>.</td>
+					</tr>
+					<tr>
+						<th class="value-name" scope="row">menu</th>
+						<td class="value-description">Indicates the popup is a <a href="#menu" class="role-reference"><code>menu</code></a>.</td>
+					</tr>
+					<tr>
+						<th class="value-name" scope="row">listbox</th>
+						<td class="value-description">Indicates the popup is a <a href="#listbox" class="role-reference"><code>listbox</code></a>.</td>
+					</tr>
+					<tr>
+						<th class="value-name" scope="row">tree</th>
+						<td class="value-description">Indicates the popup is a <a href="#tree" class="role-reference"><code>tree</code></a>.</td>
+					</tr>
+					<tr>
+						<th class="value-name" scope="row">grid</th>
+						<td class="value-description">Indicates the popup is a <a href="#grid" class="role-reference"><code>grid</code></a>.</td>
+					</tr>
+					<tr>
+						<th class="value-name" scope="row">dialog</th>
+						<td class="value-description">Indicates the popup is a <a href="#dialog" class="role-reference"><code>dialog</code></a>.</td>
+					</tr>
+				</tbody>
+			</table>
+		</section>

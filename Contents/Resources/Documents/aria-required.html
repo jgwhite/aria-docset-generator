@@ -1,0 +1,75 @@
+<section class="property notoc" id="aria-required" typeof="bibo:Chapter" resource="#aria-required" property="bibo:hasPart">
+			<h4 id="aria-required-property" resource="#aria-required-property"><span property="xhv:role" resource="xhv:heading"><span class="property-name" title="aria-required" aria-describedby="desc-aria-required"><code>aria-required</code> <span class="type-indicator">(property)</span></span><span class="permalink" typeof="bookmark"><a href="#aria-required" aria-label="Permalink for aria-required (property)" title="Permalink for aria-required (property)" property="url"><span property="title" content="aria-required (property)">§</span></a></span></span></h4>
+			<div class="property-description" id="desc-aria-required" role="definition">
+				<p>Indicates that user input is required on the <a href="#dfn-element" class="internalDFN" data-link-type="dfn">element</a> before a form may be submitted.</p>
+				<p>For example, if the user needs to fill in an address field, the author will need to set the field's <a href="#aria-required" class="property-reference"><code>aria-required</code></a> attribute to <code>true</code>.</p>
+				<div class="note">
+<div role="heading" class="note-title marker" id="h-note-53" aria-level="5"><span>Note</span></div>
+<p class="">The fact that the element is required is often presented visually (such as a sign or symbol after the <a href="#dfn-widget" class="internalDFN" data-link-type="dfn">widget</a>). Using the <code>aria-required</code> <a href="#dfn-attribute" class="internalDFN" data-link-type="dfn">attribute</a> allows the author to explicitly convey to <a href="#dfn-assistive-technology" class="internalDFN" data-link-type="dfn">assistive technologies</a> that an element is required.</p>
+</div>
+				<p>Unless an exactly equivalent native attribute is available, host languages <em class="rfc2119" title="SHOULD">SHOULD</em> allow authors to use the <code>aria-required</code> attribute on host language form elements that require input or selection by the user.</p>
+			</div>
+			<table class="property-features">
+				<caption>Characteristics:</caption>
+				<thead>
+					<tr>
+						<th scope="col">Characteristic</th>
+						<th scope="col">Value</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th class="property-related-head" scope="row">Related Concepts:</th>
+						<td class="property-related"><a href="https://www.w3.org/TR/html5/sec-forms.html#the-required-attribute"><abbr title="Hypertext Markup Language">HTML</abbr> <code>required</code></a></td>
+					</tr>
+					<tr>
+						<th class="property-applicability-head" scope="row">Used in Roles:</th>
+						<td class="property-applicability">
+<ul>
+<li><a href="#combobox" class="role-reference"><code>combobox</code></a></li>
+<li><a href="#gridcell" class="role-reference"><code>gridcell</code></a></li>
+<li><a href="#listbox" class="role-reference"><code>listbox</code></a></li>
+<li><a href="#radiogroup" class="role-reference"><code>radiogroup</code></a></li>
+<li><a href="#spinbutton" class="role-reference"><code>spinbutton</code></a></li>
+<li><a href="#textbox" class="role-reference"><code>textbox</code></a></li>
+<li><a href="#tree" class="role-reference"><code>tree</code></a></li>
+</ul>
+</td>
+					</tr>
+					<tr>
+						<th class="property-descendants-head" scope="row">Inherits into Roles:</th>
+						<td class="property-descendants">
+<ul>
+<li><a href="#columnheader" class="role-reference"><code>columnheader</code></a></li>
+<li><a href="#rowheader" class="role-reference"><code>rowheader</code></a></li>
+<li><a href="#searchbox" class="role-reference"><code>searchbox</code></a></li>
+<li><a href="#treegrid" class="role-reference"><code>treegrid</code></a></li>
+</ul>
+</td>
+					</tr>
+					<tr>
+						<th class="property-value-head" scope="row">Value:</th>
+						<td class="property-value"><a href="#valuetype_true-false">true/false</a></td>
+					</tr>
+				</tbody>
+			</table>
+			<table class="value-descriptions">
+				<caption>Values:</caption>
+				<thead>
+					<tr>
+						<th scope="col">Value</th>
+						<th scope="col">Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th class="value-name" scope="row"><strong class="default">false (default)</strong></th>
+						<td class="value-description">User input is not necessary to submit the form.</td>
+					</tr>
+					<tr>
+						<th class="value-name" scope="row">true</th>
+						<td class="value-description">Users need to provide input on an element before a form is submitted.</td>
+					</tr>
+				</tbody>
+			</table>
+		</section>

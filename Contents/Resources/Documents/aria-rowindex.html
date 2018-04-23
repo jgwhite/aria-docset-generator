@@ -1,0 +1,112 @@
+<section class="property notoc" id="aria-rowindex" typeof="bibo:Chapter" resource="#aria-rowindex" property="bibo:hasPart">
+			<h4 id="aria-rowindex-property" resource="#aria-rowindex-property"><span property="xhv:role" resource="xhv:heading"><span class="property-name" title="aria-rowindex" aria-describedby="desc-aria-rowindex"><code>aria-rowindex</code> <span class="type-indicator">(property)</span></span><span class="permalink" typeof="bookmark"><a href="#aria-rowindex" aria-label="Permalink for aria-rowindex (property)" title="Permalink for aria-rowindex (property)" property="url"><span property="title" content="aria-rowindex (property)">§</span></a></span></span></h4>
+			<div class="property-description" id="desc-aria-rowindex" role="definition">
+				<p>Defines an <a href="#dfn-element" class="internalDFN" data-link-type="dfn">element's</a> row index or position with respect to the total number of rows within a <a href="#table" class="role-reference"><code>table</code></a>, <a href="#grid" class="role-reference"><code>grid</code></a>, or <a href="#treegrid" class="role-reference"><code>treegrid</code></a>. See related <a href="#aria-rowcount" class="property-reference"><code>aria-rowcount</code></a> and <a href="#aria-rowspan" class="property-reference"><code>aria-rowspan</code></a>.</p>
+				<p>If all of the rows are present in the <abbr title="Document Object Model">DOM</abbr>, it is not necessary to set this <a href="#dfn-attribute" class="internalDFN" data-link-type="dfn">attribute</a> as the <a href="#dfn-user-agent" class="internalDFN" data-link-type="dfn">user agent</a> can automatically calculate the index of each row. However, if only a portion of the rows is present in the <abbr title="Document Object Model">DOM</abbr> at a given moment, this attribute is needed to provide an explicit indication of each row's position with respect to the full table.</p>
+				<p>Authors <em class="rfc2119" title="MUST">MUST</em> set the <span>value</span> for <a href="#aria-rowindex" class="property-reference"><code>aria-rowindex</code></a> to an integer greater than or equal to 1, greater than the <code>aria-rowindex</code> value of any previous rows, and less than or equal to the number of rows in the full table. For a cell or gridcell which spans multiple rows, authors <em class="rfc2119" title="MUST">MUST</em> set the value of <code>aria-rowindex</code> to the start of the span.</p>
+				<p>Authors <em class="rfc2119" title="SHOULD">SHOULD</em> place <code>aria-rowindex</code> on each row. Authors <em class="rfc2119" title="MAY">MAY</em> also place <code>aria-rowindex</code> on all of the children or <a href="#dfn-owned-element" class="internalDFN" data-link-type="dfn">owned elements</a> of each row.</p>
+				<p>The following example shows a grid with 2000 rows, of which the first row and rows 100 through 102 are displayed to the user.</p>
+				<div class="example">
+<div class="example-title marker"><span>Example 30</span></div>
+<pre class="highlight hljs xml" aria-busy="false" aria-live="polite"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"grid"</span> <span class="hljs-attr">aria-rowcount</span>=<span class="hljs-string">"2000"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"rowgroup"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"row"</span> <span class="hljs-attr">aria-rowindex</span>=<span class="hljs-string">"1"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"columnheader"</span>&gt;</span>First Name<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"columnheader"</span>&gt;</span>Last Name<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"columnheader"</span>&gt;</span>Company<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"columnheader"</span>&gt;</span>Phone<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"rowgroup"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"row"</span> <span class="hljs-attr">aria-rowindex</span>=<span class="hljs-string">"100"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"gridcell"</span>&gt;</span>Fred<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"gridcell"</span>&gt;</span>Jackson<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"gridcell"</span>&gt;</span>Acme, Inc.<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"gridcell"</span>&gt;</span>555-1234<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"row"</span> <span class="hljs-attr">aria-rowindex</span>=<span class="hljs-string">"101"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"gridcell"</span>&gt;</span>Sara<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"gridcell"</span>&gt;</span>James<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"gridcell"</span>&gt;</span>Acme, Inc.<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"gridcell"</span>&gt;</span>555-1235<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"row"</span> <span class="hljs-attr">aria-rowindex</span>=<span class="hljs-string">"102"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"gridcell"</span>&gt;</span>Taylor<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"gridcell"</span>&gt;</span>Johnson<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"gridcell"</span>&gt;</span>Acme, Inc.<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"gridcell"</span>&gt;</span>555-1236<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></pre>
+</div>
+				<p>The following example shows the grid from the previous example with <code>aria-rowindex</code> also placed on all of the owned elements of each row.</p>
+				<div class="example">
+<div class="example-title marker"><span>Example 31</span></div>
+<pre class="highlight hljs xml" aria-busy="false" aria-live="polite"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"grid"</span> <span class="hljs-attr">aria-rowcount</span>=<span class="hljs-string">"2000"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"rowgroup"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"row"</span> <span class="hljs-attr">aria-rowindex</span>=<span class="hljs-string">"1"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"columnheader"</span> <span class="hljs-attr">aria-rowindex</span>=<span class="hljs-string">"1"</span>&gt;</span>First Name<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"columnheader"</span> <span class="hljs-attr">aria-rowindex</span>=<span class="hljs-string">"1"</span>&gt;</span>Last Name<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"columnheader"</span> <span class="hljs-attr">aria-rowindex</span>=<span class="hljs-string">"1"</span>&gt;</span>Company<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"columnheader"</span> <span class="hljs-attr">aria-rowindex</span>=<span class="hljs-string">"1"</span>&gt;</span>Phone<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"rowgroup"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"row"</span> <span class="hljs-attr">aria-rowindex</span>=<span class="hljs-string">"100"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"gridcell"</span> <span class="hljs-attr">aria-rowindex</span>=<span class="hljs-string">"100"</span>&gt;</span>Fred<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"gridcell"</span> <span class="hljs-attr">aria-rowindex</span>=<span class="hljs-string">"100"</span>&gt;</span>Jackson<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"gridcell"</span> <span class="hljs-attr">aria-rowindex</span>=<span class="hljs-string">"100"</span>&gt;</span>Acme, Inc.<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"gridcell"</span> <span class="hljs-attr">aria-rowindex</span>=<span class="hljs-string">"100"</span>&gt;</span>555-1234<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"row"</span> <span class="hljs-attr">aria-rowindex</span>=<span class="hljs-string">"101"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"gridcell"</span> <span class="hljs-attr">aria-rowindex</span>=<span class="hljs-string">"101"</span>&gt;</span>Sara<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"gridcell"</span> <span class="hljs-attr">aria-rowindex</span>=<span class="hljs-string">"101"</span>&gt;</span>James<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"gridcell"</span> <span class="hljs-attr">aria-rowindex</span>=<span class="hljs-string">"101"</span>&gt;</span>Acme, Inc.<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"gridcell"</span> <span class="hljs-attr">aria-rowindex</span>=<span class="hljs-string">"101"</span>&gt;</span>555-1235<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"row"</span> <span class="hljs-attr">aria-rowindex</span>=<span class="hljs-string">"102"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"gridcell"</span> <span class="hljs-attr">aria-rowindex</span>=<span class="hljs-string">"102"</span>&gt;</span>Taylor<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"gridcell"</span> <span class="hljs-attr">aria-rowindex</span>=<span class="hljs-string">"102"</span>&gt;</span>Johnson<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"gridcell"</span> <span class="hljs-attr">aria-rowindex</span>=<span class="hljs-string">"102"</span>&gt;</span>Acme, Inc.<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"gridcell"</span> <span class="hljs-attr">aria-rowindex</span>=<span class="hljs-string">"102"</span>&gt;</span>555-1236<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></pre>
+</div>
+			</div>
+			<table class="property-features">
+				<caption>Characteristics:</caption>
+				<thead>
+					<tr>
+						<th scope="col">Characteristic</th>
+						<th scope="col">Value</th>
+					</tr>
+				</thead>
+				<tbody>
+					
+					<tr>
+						<th class="property-applicability-head" scope="row">Used in Roles:</th>
+						<td class="property-applicability">
+<ul>
+<li><a href="#cell" class="role-reference"><code>cell</code></a></li>
+<li><a href="#row" class="role-reference"><code>row</code></a></li>
+</ul>
+</td>
+					</tr>
+					<tr>
+						<th class="property-descendants-head" scope="row">Inherits into Roles:</th>
+						<td class="property-descendants">
+<ul>
+<li><a href="#columnheader" class="role-reference"><code>columnheader</code></a></li>
+<li><a href="#gridcell" class="role-reference"><code>gridcell</code></a></li>
+<li><a href="#rowheader" class="role-reference"><code>rowheader</code></a></li>
+</ul>
+</td>
+					</tr>
+					<tr>
+						<th class="property-value-head" scope="row">Value:</th>
+						<td class="property-value"><a href="#valuetype_integer">integer</a></td>
+					</tr>
+				</tbody>
+			</table>
+		</section>

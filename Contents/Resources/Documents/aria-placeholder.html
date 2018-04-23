@@ -1,0 +1,59 @@
+<section class="property notoc" id="aria-placeholder" typeof="bibo:Chapter" resource="#aria-placeholder" property="bibo:hasPart">
+			<h4 id="aria-placeholder-property" resource="#aria-placeholder-property"><span property="xhv:role" resource="xhv:heading"><span class="property-name" title="aria-placeholder" aria-describedby="desc-aria-placeholder"><code>aria-placeholder</code> <span class="type-indicator">(property)</span></span><span class="permalink" typeof="bookmark"><a href="#aria-placeholder" aria-label="Permalink for aria-placeholder (property)" title="Permalink for aria-placeholder (property)" property="url"><span property="title" content="aria-placeholder (property)">§</span></a></span></span></h4>
+			<div class="property-description" id="desc-aria-placeholder" role="definition">
+				<p>Defines a short hint (a word or short phrase) intended to aid the user with data entry when the control has no value. A hint could be a sample value or a brief description of the expected format.</p>
+				<p>Authors <em class="rfc2119" title="SHOULD NOT">SHOULD NOT</em> use <a href="#aria-placeholder" class="property-reference"><code>aria-placeholder</code></a> instead of a label as their purposes are different: The label indicates what kind of information is expected. The placeholder text is a hint about the expected value. See related <a href="#aria-labelledby" class="property-reference"><code>aria-labelledby</code></a> and <a href="#aria-label" class="property-reference"><code>aria-label</code></a>.</p>
+				<p>Authors <em class="rfc2119" title="SHOULD">SHOULD</em> present this hint to the user by displaying the hint text at any time the control's <span>value</span> is the empty string. This includes cases where the control first receives focus, and when users remove a previously-entered value.</p>
+				<div class="note">
+<div role="heading" class="note-title marker" id="h-note-50" aria-level="5"><span>Note</span></div>
+<p class="">As is the case with the related <a href="https://www.w3.org/TR/html5/sec-forms.html#the-placeholder-attribute"><abbr title="Hypertext Markup Language">HTML</abbr> <code>placeholder</code></a> attribute, use of placeholder text as a replacement for a displayed label can reduce the accessibility and usability of the control for a range of users including older users and users with cognitive, mobility, fine motor skill or vision impairments. While the hint given by the control's label is shown at all times, the short hint given in the placeholder attribute is only shown before the user enters a value. Furthermore, placeholder text may be mistaken for a pre-filled value, and as commonly implemented the default color of the placeholder text provides insufficient contrast and the lack of a separate visible label reduces the size of the hit region available for setting focus on the control.</p>
+</div>
+				<p>The following example shows a <a href="#searchbox" class="role-reference"><code>searchbox</code></a> in which the user has entered a value:</p>
+				<div class="example">
+<div class="example-title marker"><span>Example 22</span></div>
+<pre class="highlight hljs xml" aria-busy="false" aria-live="polite"><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"label"</span>&gt;</span>Birthday:<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">contenteditable</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"searchbox"</span> <span class="hljs-attr">aria-labelledby</span>=<span class="hljs-string">"label"</span> <span class="hljs-attr">aria-placeholder</span>=<span class="hljs-string">"MM-DD-YYYY"</span>&gt;</span>03-14-1879<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></pre>
+</div>
+				<p>The following example shows the same <code>searchbox</code> in which the user has not yet entered a value or has removed a previously-entered value:</p>
+				<div class="example">
+<div class="example-title marker"><span>Example 23</span></div>
+<pre class="highlight hljs xml" aria-busy="false" aria-live="polite"><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"label"</span>&gt;</span>Birthday:<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">contenteditable</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"searchbox"</span> <span class="hljs-attr">aria-labelledby</span>=<span class="hljs-string">"label"</span> <span class="hljs-attr">aria-placeholder</span>=<span class="hljs-string">"MM-DD-YYYY"</span>&gt;</span>MM-DD-YYYY<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></pre>
+</div>
+			</div>
+			<table class="property-features">
+				<caption>Characteristics:</caption>
+				<thead>
+					<tr>
+						<th scope="col">Characteristic</th>
+						<th scope="col">Value</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th class="property-related-head" scope="row">Related Concepts:</th>
+						<td class="property-related"><a href="https://www.w3.org/TR/html5/sec-forms.html#the-placeholder-attribute"><abbr title="Hypertext Markup Language">HTML</abbr> <code>placeholder</code></a></td>
+					</tr>
+					<tr>
+						<th class="property-applicability-head" scope="row">Used in Roles:</th>
+						<td class="property-applicability">
+<ul>
+<li><a href="#textbox" class="role-reference"><code>textbox</code></a></li>
+</ul>
+</td>
+					</tr>
+					<tr>
+						<th class="property-descendants-head" scope="row">Inherits into Roles:</th>
+						<td class="property-descendants">
+<ul>
+<li><a href="#searchbox" class="role-reference"><code>searchbox</code></a></li>
+</ul>
+</td>
+					</tr>
+					<tr>
+						<th class="property-value-head" scope="row">Value:</th>
+						<td class="property-value"><a href="#valuetype_string">string</a></td>
+					</tr>
+				</tbody>
+			</table>
+		</section>

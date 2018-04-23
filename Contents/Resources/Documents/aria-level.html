@@ -1,0 +1,51 @@
+<section class="property notoc" id="aria-level" typeof="bibo:Chapter" resource="#aria-level" property="bibo:hasPart">
+			<h4 id="aria-level-property" resource="#aria-level-property"><span property="xhv:role" resource="xhv:heading"><span class="property-name" title="aria-level" aria-describedby="desc-aria-level"><code>aria-level</code> <span class="type-indicator">(property)</span></span><span class="permalink" typeof="bookmark"><a href="#aria-level" aria-label="Permalink for aria-level (property)" title="Permalink for aria-level (property)" property="url"><span property="title" content="aria-level (property)">§</span></a></span></span></h4>
+			<div class="property-description" id="desc-aria-level" role="definition">
+				<p>Defines the hierarchical level of an <a href="#dfn-element" class="internalDFN" data-link-type="dfn">element</a> within a structure.</p>
+				<p>This can be applied inside trees to tree items, to headings inside a document, to nested grids, nested tablists and to other structural items that may appear inside a container or participate in an ownership hierarchy. The value for <a href="#aria-level" class="property-reference"><code>aria-level</code></a> is an integer greater than or equal to 1.</p>
+				<p>Levels increase with depth. If the <abbr title="Document Object Model">DOM</abbr> ancestry does not accurately represent the level, authors <em class="rfc2119" title="SHOULD">SHOULD</em> explicitly define the <code>aria-level</code> <a href="#dfn-attribute" class="internalDFN" data-link-type="dfn">attribute</a>.</p>
+				<p>This attribute is applied to elements that act as leaf nodes within the orientation of the set, for example, on elements with role <a href="#treeitem" class="role-reference"><code>treeitem</code></a> rather than elements with role <a href="#group" class="role-reference"><code>group</code></a>. This means that multiple elements in a set may have the same value for this attribute. Although it would be less repetitive to provide a single value on the container, restricting this to leaf nodes ensures that there is a single way for <a href="#dfn-assistive-technology" class="internalDFN" data-link-type="dfn">assistive technologies</a> to use the attribute.</p>
+				<p>If the <abbr title="Document Object Model">DOM</abbr> ancestry accurately represents the level, the <a href="#dfn-user-agent" class="internalDFN" data-link-type="dfn">user agent</a> can calculate the level of an item from the document structure. This attribute can be used to provide an explicit indication of the level when that is not possible to calculate from the document structure or the <a href="#aria-owns" class="property-reference"><code>aria-owns</code></a> attribute. User agent support for automatic calculation of level may vary; authors <em class="rfc2119" title="SHOULD">SHOULD</em> test with <a href="#dfn-user-agent" class="internalDFN" data-link-type="dfn">user agents</a> and assistive technologies to determine whether this attribute is needed. If the author intends for the user agent to calculate the level, the author <em class="rfc2119" title="SHOULD">SHOULD</em> omit this attribute.</p>
+                <div class="note">
+<div role="heading" class="note-title marker" id="h-note-46" aria-level="5"><span>Note</span></div>
+<p class=""> In the case of a <a href="#treegrid" class="role-reference"><code>treegrid</code></a>, <code>aria-level</code> is supported on elements with the role <a href="#row" class="role-reference"><code>row</code></a>, not elements with role <a href="#gridcell" class="role-reference"><code>gridcell</code></a>. At first glance, this may seem inconsistent with the application of <code>aria-level</code> on <code>treeitem</code> elements, but it is consistent in that the <code>row</code> acts as the leaf node within the vertical orientation of the <a href="#grid" class="role-reference"><code>grid</code></a>, whereas the <code>gridcell</code> is a leaf node within the horizontal orientation of each <code>row</code>. Level is not supported on sets of cells within rows, so the <code>aria-level</code> attribute is applied to the element with the role <code>row</code>.</p>
+</div>
+			</div>
+			<table class="property-features">
+				<caption>Characteristics:</caption>
+				<thead>
+					<tr>
+						<th scope="col">Characteristic</th>
+						<th scope="col">Value</th>
+					</tr>
+				</thead>
+				<tbody>
+					
+					<tr>
+						<th class="property-applicability-head" scope="row">Used in Roles:</th>
+						<td class="property-applicability">
+<ul>
+<li><a href="#grid" class="role-reference"><code>grid</code></a></li>
+<li><a href="#heading" class="role-reference"><code>heading</code></a></li>
+<li><a href="#listitem" class="role-reference"><code>listitem</code></a></li>
+<li><a href="#row" class="role-reference"><code>row</code></a></li>
+<li><a href="#tablist" class="role-reference"><code>tablist</code></a></li>
+</ul>
+</td>
+					</tr>
+					<tr>
+						<th class="property-descendants-head" scope="row">Inherits into Roles:</th>
+						<td class="property-descendants">
+<ul>
+<li><a href="#treegrid" class="role-reference"><code>treegrid</code></a></li>
+<li><a href="#treeitem" class="role-reference"><code>treeitem</code></a></li>
+</ul>
+</td>
+					</tr>
+					<tr>
+						<th class="property-value-head" scope="row">Value:</th>
+						<td class="property-value"><a href="#valuetype_integer">integer</a></td>
+					</tr>
+				</tbody>
+			</table>
+		</section>

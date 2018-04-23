@@ -1,0 +1,86 @@
+<section class="role notoc" id="alert" typeof="bibo:Chapter" resource="#alert" property="bibo:hasPart">
+			<h4 class="role-name" title="alert" aria-describedby="desc-alert" id="alert-0" resource="#alert-0"><span property="xhv:role" resource="xhv:heading"><code>alert</code> <span class="type-indicator">(role)</span><span class="permalink" typeof="bookmark"><a href="#alert" aria-label="Permalink for alert (role)" title="Permalink for alert (role)" property="url"><span property="title" content="alert (role)">§</span></a></span></span></h4>
+			<div class="role-description" id="desc-alert" role="definition">
+				<p>A type of <a href="#dfn-live-region" class="internalDFN" data-link-type="dfn">live region</a> with important, and usually time-sensitive, information. See related <a href="#alertdialog" class="role-reference"><code>alertdialog</code></a> and <a href="#status" class="role-reference"><code>status</code></a>.</p>
+				<p>Alerts are used to convey messages to alert the user. In the case of audio warnings this is an accessible alternative for a hearing-impaired user. The <code>alert</code> <a href="#dfn-role" class="internalDFN" data-link-type="dfn">role</a> goes on the node containing the alert message. Alerts are specialized forms of the <code>status</code> role, which will be processed as an atomic <a href="#dfn-live-region" class="internalDFN" data-link-type="dfn">live region</a>.</p>
+				<p>Alerts are assertive live regions and will be processed as such by assistive technologies. Neither authors nor user agents are required to set or manage focus to them in order for them to be processed. Since alerts are not required to receive focus, content authors <em class="rfc2119" title="SHOULD NOT">SHOULD NOT</em> require users to close an alert. If the operating system allows, the <a href="#dfn-user-agent" class="internalDFN" data-link-type="dfn">user agent</a> <em class="rfc2119" title="SHOULD">SHOULD</em> fire a system alert <a href="#dfn-event" class="internalDFN" data-link-type="dfn">event</a> through the accessibility <abbr title="Application Programing Interfaces">API</abbr> when the <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> alert is created. If an alert requires focus to close the alert, then content authors <em class="rfc2119" title="SHOULD">SHOULD</em> use <code>alertdialog</code> instead.</p>
+				<p>Elements with the role <code>alert</code> have an implicit <a href="#aria-live" class="property-reference"><code>aria-live</code></a> value of <code>assertive</code>, and an implicit <a href="#aria-atomic" class="property-reference"><code>aria-atomic</code></a> value of <code>true</code>.</p>
+			</div>
+			<table class="role-features">
+				<caption>Characteristics:</caption>
+				<thead>
+					<tr>
+						<th scope="col">Characteristic</th>
+						<th scope="col">Value</th>
+					</tr>
+				</thead>
+				<tbody>
+					
+					<tr>
+						<th class="role-parent-head" scope="row">Superclass Role:</th>
+						<td class="role-parent"><a href="#section" class="role-reference"><code>section</code></a></td>
+					</tr>
+					<tr>
+						<th class="role-children-head" scope="row">Subclass Roles:</th>
+						<td class="role-children">
+<ul>
+<li><a href="#alertdialog" class="role-reference"><code>alertdialog</code></a></li>
+</ul>
+</td>
+					</tr>
+					
+					<tr>
+						<th class="role-related-head" scope="row">Related Concepts:</th>
+						<td class="role-related"><a href="https://www.w3.org/TR/2007/REC-xforms-20071029/#ui-common-elements-alert">XForms alert</a></td>
+					</tr>
+					
+					
+					
+					
+					<tr>
+						<th class="role-inherited-head" scope="row">Inherited States and Properties:</th>
+						<td class="role-inherited">
+<ul>
+<li><a href="#aria-atomic" class="property-reference"><code>aria-atomic</code></a></li>
+<li><a href="#aria-busy" class="state-reference"><code>aria-busy (state)</code></a></li>
+<li><a href="#aria-controls" class="property-reference"><code>aria-controls</code></a></li>
+<li><a href="#aria-current" class="state-reference"><code>aria-current (state)</code></a></li>
+<li><a href="#aria-describedby" class="property-reference"><code>aria-describedby</code></a></li>
+<li><a href="#aria-details" class="property-reference"><code>aria-details</code></a></li>
+<li><a href="#aria-disabled" class="state-reference"><code>aria-disabled (state)</code></a></li>
+<li><a href="#aria-dropeffect" class="property-reference"><code>aria-dropeffect</code></a></li>
+<li><a href="#aria-errormessage" class="property-reference"><code>aria-errormessage</code></a></li>
+<li><a href="#aria-expanded" class="state-reference"><code>aria-expanded (state)</code></a></li>
+<li><a href="#aria-flowto" class="property-reference"><code>aria-flowto</code></a></li>
+<li><a href="#aria-grabbed" class="state-reference"><code>aria-grabbed (state)</code></a></li>
+<li><a href="#aria-haspopup" class="property-reference"><code>aria-haspopup</code></a></li>
+<li><a href="#aria-hidden" class="state-reference"><code>aria-hidden (state)</code></a></li>
+<li><a href="#aria-invalid" class="state-reference"><code>aria-invalid (state)</code></a></li>
+<li><a href="#aria-keyshortcuts" class="property-reference"><code>aria-keyshortcuts</code></a></li>
+<li><a href="#aria-label" class="property-reference"><code>aria-label</code></a></li>
+<li><a href="#aria-labelledby" class="property-reference"><code>aria-labelledby</code></a></li>
+<li><a href="#aria-live" class="property-reference"><code>aria-live</code></a></li>
+<li><a href="#aria-owns" class="property-reference"><code>aria-owns</code></a></li>
+<li><a href="#aria-relevant" class="property-reference"><code>aria-relevant</code></a></li>
+<li><a href="#aria-roledescription" class="property-reference"><code>aria-roledescription</code></a></li>
+</ul>
+</td>
+					</tr>
+					<tr>
+						<th class="role-namefrom-head" scope="row">Name From:</th>
+						<td class="role-namefrom">author</td>
+					</tr>
+					
+					
+					
+					
+					<tr>
+						<th class="implicit-values-head">Implicit Value for Role:</th>
+						<td class="implicit-values">
+							Default for <a href="#aria-live" class="property-reference"><code>aria-live</code></a> is <code class="default">assertive</code>.<br>
+							Default for <a href="#aria-atomic" class="property-reference"><code>aria-atomic</code></a> is <code class="default">true</code>.
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</section>

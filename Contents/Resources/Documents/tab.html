@@ -1,0 +1,103 @@
+<section class="role notoc" id="tab" typeof="bibo:Chapter" resource="#tab" property="bibo:hasPart">
+			<h4 class="role-name" title="tab" aria-describedby="desc-tab" id="tab-0" resource="#tab-0"><span property="xhv:role" resource="xhv:heading"><code>tab</code> <span class="type-indicator">(role)</span><span class="permalink" typeof="bookmark"><a href="#tab" aria-label="Permalink for tab (role)" title="Permalink for tab (role)" property="url"><span property="title" content="tab (role)">§</span></a></span></span></h4>
+			<div class="role-description" id="desc-tab" role="definition">
+				<p>A grouping label providing a mechanism for selecting the tab content that is to be rendered to the user.</p>
+				<p>If a  <a href="#tabpanel" class="role-reference"><code>tabpanel</code></a> or item in a <code>tabpanel</code> has focus, the associated <code>tab</code> is the currently active tab in the <a href="#tablist" class="role-reference"><code>tablist</code></a>, as defined in <a href="#managingfocus">Managing Focus</a>. <code>tablist</code> elements, which contain a set of associated <a href="#tab" class="role-reference"><code>tab</code></a> elements, are typically placed near a series of <code>tabpanel</code> elements, usually preceding it. See the <cite><a href="https://www.w3.org/TR/wai-aria-practices-1.1/"><abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> Authoring Practices</a></cite> [<cite><a class="bibref" href="#bib-wai-aria-practices-1.1">wai-aria-practices-1.1</a></cite>] for details on implementing a tab set design pattern.</p>
+				<p>Authors <em class="rfc2119" title="MUST">MUST</em> ensure <a href="#dfn-element" class="internalDFN" data-link-type="dfn">elements</a> with <a href="#dfn-role" class="internalDFN" data-link-type="dfn">role</a> <code>tab</code> are contained in, or <a href="#dfn-owned-element" class="internalDFN" data-link-type="dfn">owned</a> by, an element with the role <code>tablist</code>.</p>
+				<p>Authors <em class="rfc2119" title="SHOULD">SHOULD</em> ensure the <code>tabpanel</code> associated with the currently active tab is <a href="#dfn-perceivable" class="internalDFN" data-link-type="dfn">perceivable</a> to the user.</p>
+
+				<!-- keep following para synced with its counterpart in #tablist -->
+				<p>For a single-selectable <code>tablist</code>, authors <em class="rfc2119" title="SHOULD">SHOULD</em> hide other <code>tabpanel</code> <a href="#dfn-element" class="internalDFN" data-link-type="dfn">elements</a> from the user until the user selects the tab associated with that tabpanel. For a multi-selectable <code>tablist</code>, authors <em class="rfc2119" title="SHOULD">SHOULD</em> ensure each visible <code>tabpanel</code> has its <a href="#aria-expanded" class="state-reference"><code>aria-expanded</code></a> <a href="#dfn-attribute" class="internalDFN" data-link-type="dfn">attribute</a> set to <code>true</code>, and that the remaining hidden <code>tabpanel</code> elements have their <code>aria-expanded</code> attributes set to <code>false</code>.</p>
+
+				<p>In either case, authors <em class="rfc2119" title="SHOULD">SHOULD</em> ensure that a selected tab has its <a href="#aria-selected" class="state-reference"><code>aria-selected</code></a> attribute set to <code>true</code>, that inactive tab elements have their <code>aria-selected</code> attribute set to <code>false</code>, and that the currently selected tab provides a visual indication that it is selected. In the absence of an <code>aria-selected</code> attribute on the current tab, <a href="#dfn-user-agent" class="internalDFN" data-link-type="dfn">user agents</a> <em class="rfc2119" title="SHOULD">SHOULD</em> indicate to <a href="#dfn-assistive-technology" class="internalDFN" data-link-type="dfn">assistive technologies</a> through the platform <a href="#dfn-accessibility-api" class="internalDFN" data-link-type="dfn">accessibility <abbr title="Application Programing Interfaces">API</abbr></a> that the currently focused tab is selected.</p>
+			</div>
+			<table class="role-features">
+				<caption>Characteristics:</caption>
+				<thead>
+					<tr>
+						<th scope="col">Characteristic</th>
+						<th scope="col">Value</th>
+					</tr>
+				</thead>
+				<tbody>
+					
+					<tr>
+						<th class="role-parent-head" scope="row">Superclass Role:</th>
+						<td class="role-parent">
+							<ul>
+								<li><a href="#sectionhead" class="role-reference"><code>sectionhead</code></a></li>
+								<li><a href="#widget" class="role-reference"><code>widget</code></a></li>
+							</ul>
+						</td>
+					</tr>
+					
+					
+					
+					<tr>
+						<th class="role-scope-head" scope="row">Required Context Role:</th>
+						<td class="role-scope"><a href="#tablist" class="role-reference"><code>tablist</code></a></td>
+					</tr>
+					
+					
+					<tr>
+						<th class="role-properties-head" scope="row">Supported States and Properties:</th>
+						<td class="role-properties">
+							<ul>
+								<li><a href="#aria-posinset" class="property-reference"><code>aria-posinset</code></a></li>
+								<li><a href="#aria-selected" class="state-reference"><code>aria-selected</code></a></li>
+								<li><a href="#aria-setsize" class="property-reference"><code>aria-setsize</code></a></li>
+							</ul>
+						</td>
+					</tr>
+					<tr>
+						<th class="role-inherited-head" scope="row">Inherited States and Properties:</th>
+						<td class="role-inherited">
+<ul>
+<li><a href="#aria-atomic" class="property-reference"><code>aria-atomic</code></a></li>
+<li><a href="#aria-busy" class="state-reference"><code>aria-busy (state)</code></a></li>
+<li><a href="#aria-controls" class="property-reference"><code>aria-controls</code></a></li>
+<li><a href="#aria-current" class="state-reference"><code>aria-current (state)</code></a></li>
+<li><a href="#aria-describedby" class="property-reference"><code>aria-describedby</code></a></li>
+<li><a href="#aria-details" class="property-reference"><code>aria-details</code></a></li>
+<li><a href="#aria-disabled" class="state-reference"><code>aria-disabled (state)</code></a></li>
+<li><a href="#aria-dropeffect" class="property-reference"><code>aria-dropeffect</code></a></li>
+<li><a href="#aria-errormessage" class="property-reference"><code>aria-errormessage</code></a></li>
+<li><a href="#aria-expanded" class="state-reference"><code>aria-expanded (state)</code></a></li>
+<li><a href="#aria-flowto" class="property-reference"><code>aria-flowto</code></a></li>
+<li><a href="#aria-grabbed" class="state-reference"><code>aria-grabbed (state)</code></a></li>
+<li><a href="#aria-haspopup" class="property-reference"><code>aria-haspopup</code></a></li>
+<li><a href="#aria-hidden" class="state-reference"><code>aria-hidden (state)</code></a></li>
+<li><a href="#aria-invalid" class="state-reference"><code>aria-invalid (state)</code></a></li>
+<li><a href="#aria-keyshortcuts" class="property-reference"><code>aria-keyshortcuts</code></a></li>
+<li><a href="#aria-label" class="property-reference"><code>aria-label</code></a></li>
+<li><a href="#aria-labelledby" class="property-reference"><code>aria-labelledby</code></a></li>
+<li><a href="#aria-live" class="property-reference"><code>aria-live</code></a></li>
+<li><a href="#aria-owns" class="property-reference"><code>aria-owns</code></a></li>
+<li><a href="#aria-relevant" class="property-reference"><code>aria-relevant</code></a></li>
+<li><a href="#aria-roledescription" class="property-reference"><code>aria-roledescription</code></a></li>
+</ul>
+</td>
+					</tr>
+					<tr>
+						<th class="role-namefrom-head" scope="row">Name From:</th>
+						<td class="role-namefrom">
+							<ul>
+								<li>contents</li>
+								<li>author</li>
+							</ul>
+						</td>
+					</tr>
+					
+					
+					<tr>
+						<th class="role-childpresentational-head" scope="row">Children Presentational:</th>
+						<td class="role-childpresentational">True</td>
+					</tr>
+					
+					<tr>
+						<th class="implicit-values-head" scope="row">Implicit Value for Role:</th>
+						<td class="implicit-values">Default for <a href="#aria-selected" class="state-reference"><code>aria-selected</code></a> is <code class="default">false</code>.</td>
+					</tr>
+				</tbody>
+			</table>
+		</section>

@@ -1,0 +1,38 @@
+<section class="property notoc" id="aria-labelledby" typeof="bibo:Chapter" resource="#aria-labelledby" property="bibo:hasPart">
+			<h4 id="aria-labelledby-property" resource="#aria-labelledby-property"><span property="xhv:role" resource="xhv:heading"><span class="property-name" title="aria-labelledby" aria-describedby="desc-aria-labelledby"><code>aria-labelledby</code> <span class="type-indicator">(property)</span></span><span class="permalink" typeof="bookmark"><a href="#aria-labelledby" aria-label="Permalink for aria-labelledby (property)" title="Permalink for aria-labelledby (property)" property="url"><span property="title" content="aria-labelledby (property)">§</span></a></span></span></h4>
+			<div class="property-description" id="desc-aria-labelledby" role="definition">
+				<p>Identifies the <a href="#dfn-element" class="internalDFN" data-link-type="dfn">element</a> (or elements) that labels the current element. See related <a href="#aria-describedby" class="property-reference"><code>aria-describedby</code></a>.</p>
+				<p>The purpose of <a href="#aria-labelledby" class="property-reference"><code>aria-labelledby</code></a> is the same as that of <a href="#aria-label" class="property-reference"><code>aria-label</code></a>. It provides the user with a recognizable name of the object. The most common <a href="#dfn-accessibility-api" class="internalDFN" data-link-type="dfn">accessibility <abbr title="Application Programing Interfaces">API</abbr></a> mapping for a label is the <a href="#dfn-accessible-name" class="internalDFN" data-link-type="dfn">accessible name</a> property.</p>
+				<p>If the interface is such that it is not possible to have a visible label on the screen, authors <em class="rfc2119" title="SHOULD">SHOULD</em> use <code>aria-label</code> and <em class="rfc2119" title="SHOULD NOT">SHOULD NOT</em> use <code>aria-labelledby</code>. As required by the <a href="#textalternativecomputation">text alternative computation</a>, user agents give precedence to <code>aria-labelledby</code> over <code>aria-label</code> when computing the accessible name property.</p>
+				<p>The <code>aria-labelledby</code> attribute is similar to <code>aria-describedby</code> in that both reference other elements to calculate a text alternative, but a label should be concise, where a description is intended to provide more verbose information.</p>
+				<!-- keep previous sentence synced with the associated description in #aria-describedby -->
+				<div class="note">
+<div role="heading" class="note-title marker" id="h-note-45" aria-level="5"><span>Note</span></div>
+<p class="">The expected spelling of this property in <abbr title="United States">U.S.</abbr> English is "labeledby." However, the <a href="#dfn-accessibility-api" class="internalDFN" data-link-type="dfn">accessibility <abbr title="Application Programing Interfaces">API</abbr></a> features to which this property is mapped have established the "labelledby" spelling. This property is spelled that way to match the convention and minimize the difficulty for developers.</p>
+</div>
+			</div>
+			<table class="property-features">
+				<caption>Characteristics:</caption>
+				<thead>
+					<tr>
+						<th scope="col">Characteristic</th>
+						<th scope="col">Value</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th class="property-related-head" scope="row">Related Concepts:</th>
+						<td class="property-related"><a href="https://www.w3.org/TR/html5/sec-forms.html#the-label-element"><abbr title="Hypertext Markup Language">HTML</abbr> <code>label</code></a></td>
+					</tr>
+					<tr>
+						<th class="property-applicability-head" scope="row">Used in Roles:</th>
+						<td class="property-applicability">All elements of the base markup</td>
+					</tr>
+					
+					<tr>
+						<th class="property-value-head" scope="row">Value:</th>
+						<td class="property-value"><a href="#valuetype_idref_list">ID reference list</a></td>
+					</tr>
+				</tbody>
+			</table>
+		</section>

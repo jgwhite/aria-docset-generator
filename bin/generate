@@ -1,0 +1,48 @@
+#!/usr/bin/env ruby
+
+require 'open-uri'
+require 'nokogiri'
+require 'fileutils'
+require 'pry'
+
+base_path = File.expand_path("../", __dir__)
+resources_path = File.join(base_path, "Contents", "Resources")
+index_path = File.join(resources_path, "docSet.dsidx")
+documents_path = File.join(resources_path, "Documents")
+
+source_url = "https://www.w3.org/TR/wai-aria-1.1/"
+source_doc = Nokogiri::HTML(open(source_url))
+
+FileUtils.rm_f(index_path)
+
+IO.popen(["sqlite3", index_path], "w") do |db|
+
+  db << "CREATE TABLE searchIndex(id INTEGER PRIMARY KEY, name TEXT, type TEXT, path TEXT);\n"
+  db << "CREATE UNIQUE INDEX anchor ON searchIndex (name, type, path);\n"
+
+  source_doc.css("section.role").each do |section|
+    name = section.at_css("code").text
+    type = "Class"
+    path = source_url + section["resource"]
+    path = "#{name}.html"
+
+    File.open(File.join(documents_path, path), "w") do |file|
+      file << section.to_html
+    end
+
+    db << "INSERT OR IGNORE INTO searchIndex(name, type, path) VALUES ('#{name}', '#{type}', '#{path}');\n"
+  end
+
+  source_doc.css("section.property").each do |section|
+    name = section.at_css("code").text
+    type = "Attribute"
+    path = "#{name}.html"
+
+    File.open(File.join(documents_path, path), "w") do |file|
+      file << section.to_html
+    end
+
+    db << "INSERT OR IGNORE INTO searchIndex(name, type, path) VALUES ('#{name}', '#{type}', '#{path}');\n"
+  end
+
+end

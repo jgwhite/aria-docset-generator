@@ -1,0 +1,71 @@
+<section class="property notoc" id="aria-relevant" typeof="bibo:Chapter" resource="#aria-relevant" property="bibo:hasPart">
+			<h4 id="aria-relevant-property" resource="#aria-relevant-property"><span property="xhv:role" resource="xhv:heading"><span class="property-name" title="aria-relevant" aria-describedby="desc-aria-relevant"><code>aria-relevant</code> <span class="type-indicator">(property)</span></span><span class="permalink" typeof="bookmark"><a href="#aria-relevant" aria-label="Permalink for aria-relevant (property)" title="Permalink for aria-relevant (property)" property="url"><span property="title" content="aria-relevant (property)">§</span></a></span></span></h4>
+			<div class="property-description" id="desc-aria-relevant" role="definition">
+				<p>Indicates what notifications the user agent will trigger when the accessibility tree within a live region is modified. See related <a href="#aria-atomic" class="property-reference"><code>aria-atomic</code></a>.</p>
+				<p>The <a href="#dfn-attribute" class="internalDFN" data-link-type="dfn">attribute</a> is represented as a space delimited list of the following <span>values</span>: <code>additions</code>, <code>removals</code>, <code>text</code>; or a single catch-all value <code>all</code>.</p>
+				<p>This is used to describe <a href="#dfn-semantics" class="internalDFN" data-link-type="dfn">semantically</a> meaningful changes, as opposed to merely presentational ones. For example, nodes that are removed from the top of a log are merely removed for purposes of creating room for other entries, and the removal of them does not have meaning. However, in the case of a buddy list, removal of a buddy name indicates that they are no longer online, and this is a meaningful <a href="#dfn-event" class="internalDFN" data-link-type="dfn">event</a>. In that case <a href="#aria-relevant" class="property-reference"><code>aria-relevant</code></a> will be set to <code>all</code>. When the <code>aria-relevant</code> attribute is not provided, the default value, <code>additions text</code>, indicates that text modifications and node additions are relevant, but that node removals are irrelevant.</p>
+				<div class="note">
+<div role="heading" class="note-title marker" id="h-note-51" aria-level="5"><span>Note</span></div>
+<p class=""><code>aria-relevant</code> values of removals or all are to be used sparingly. Assistive technologies only need to be informed of content removal when its removal represents an important change, such as a buddy leaving a chat room.</p>
+</div>
+				<div class="note">
+<div role="heading" class="note-title marker" id="h-note-52" aria-level="5"><span>Note</span></div>
+<p class="">Text removals should only be considered relevant if one of the specified values is 'removals' or 'all'. For example, for a text change from 'foo' to 'bar' in a live region with a default <code>aria-relevant</code> value, the text addition ('bar') would be spoken, but the text removal ('foo') would not.</p>
+</div>
+				<p><code>aria-relevant</code> is an optional attribute of live regions. This is a suggestion to <a href="#dfn-assistive-technology" class="internalDFN" data-link-type="dfn">assistive technologies</a>, but assistive technologies are not required to present changes of all the relevant types.</p>
+				<p>When <code>aria-relevant</code> is not defined, an element's value is inherited from the nearest ancestor with a defined value. Although the value is a <a href="#valuetype_token_list">token list</a>, inherited values are not additive; the value provided on a descendant element completely overrides any inherited value from an ancestor element.</p>
+				<p>When text changes are denoted as relevant, user agents <em class="rfc2119" title="MUST">MUST</em> monitor any descendant node change that affects the <a href="#textalternativecomputation">text alternative computation</a> of the live region as if the accessible name were determined from contents (<a href="#namecalculation">nameFrom: contents</a>). For example, a text change would be triggered if the <abbr title="Hypertext Markup Language">HTML</abbr> <code>alt</code> attribute of a contained image changed. However, no change would be triggered if there was a text change to a node outside the live region, even if that node was referenced (via <a href="#aria-labelledby" class="property-reference"><code>aria-labelledby</code></a>) by an element contained in the live region.</p>
+			</div>
+			<table class="property-features">
+				<caption>Characteristics:</caption>
+				<thead>
+					<tr>
+						<th scope="col">Characteristic</th>
+						<th scope="col">Value</th>
+					</tr>
+				</thead>
+				<tbody>
+					
+					<tr>
+						<th class="property-applicability-head" scope="row">Used in Roles:</th>
+						<td class="property-applicability">All elements of the base markup</td>
+					</tr>
+					
+					<tr>
+						<th class="property-value-head" scope="row">Value:</th>
+						<td class="property-value"><a href="#valuetype_token_list">token list</a></td>
+					</tr>
+				</tbody>
+			</table>
+			<table class="value-descriptions">
+				<caption>Values:</caption>
+				<thead>
+					<tr>
+						<th scope="col">Value</th>
+						<th scope="col">Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th class="value-name" scope="row">additions</th>
+						<td class="value-description">Element nodes are added to the accessibility tree within the live region.</td>
+					</tr>
+					<tr>
+						<th class="value-name" scope="row"><strong class="default">additions text</strong></th>
+						<td class="value-description">Equivalent to the combination of values, "additions text".</td>
+					</tr>
+					<tr>
+						<th class="value-name" scope="row">all</th>
+						<td class="value-description">Equivalent to the combination of all values, "additions removals text".</td>
+					</tr>
+					<tr>
+						<th class="value-name" scope="row">removals</th>
+						<td class="value-description">Text content, a text alternative, or an element node within the live region is removed from the accessibility tree.</td>
+					</tr>
+					<tr>
+						<th class="value-name" scope="row">text</th>
+						<td class="value-description">Text content or a text alternative is added to any descendant in the accessibility tree of the live region.</td>
+					</tr>
+				</tbody>
+			</table>
+		</section>

@@ -1,0 +1,56 @@
+<section class="property notoc" id="aria-live" typeof="bibo:Chapter" resource="#aria-live" property="bibo:hasPart">
+			<h4 id="aria-live-property" resource="#aria-live-property"><span property="xhv:role" resource="xhv:heading"><span class="property-name" title="aria-live" aria-describedby="desc-aria-live"><code>aria-live</code> <span class="type-indicator">(property)</span></span><span class="permalink" typeof="bookmark"><a href="#aria-live" aria-label="Permalink for aria-live (property)" title="Permalink for aria-live (property)" property="url"><span property="title" content="aria-live (property)">§</span></a></span></span></h4>
+			<div class="property-description" id="desc-aria-live" role="definition">
+				<p>Indicates that an <a href="#dfn-element" class="internalDFN" data-link-type="dfn">element</a> will be updated, and describes the types of updates the <a href="#dfn-user-agent" class="internalDFN" data-link-type="dfn">user agents</a>, <a href="#dfn-assistive-technology" class="internalDFN" data-link-type="dfn">assistive technologies</a>, and user can expect from the <a href="#dfn-live-region" class="internalDFN" data-link-type="dfn">live region</a>.</p>
+				<p>The <span>values</span> of this <a href="#dfn-attribute" class="internalDFN" data-link-type="dfn">attribute</a> are expressed in degrees of importance. When regions are specified as <code>polite</code>, assistive technologies will notify users of updates but generally do not interrupt the current task, and updates take low priority. When regions are specified as <code>assertive</code>, assistive technologies will immediately notify the user, and could potentially clear the speech queue of previous updates.</p>
+				<p>Politeness levels are essentially an ordering mechanism for updates and serve as a strong suggestion to user agents or assistive technologies. The value may be overridden by user agents, assistive technologies, or the user. For example, if assistive technologies can determine that a change occurred in response to a key press or a mouse click, the assistive technologies may present that change immediately even if the value of the <a href="#aria-live" class="property-reference"><code>aria-live</code></a> attribute states otherwise.</p>
+				<p>Since different users have different needs, it is up to the user to tweak his or her assistive technologies' response to a live region with a certain politeness level from the commonly defined baseline. Assistive technologies may choose to implement increasing and decreasing levels of granularity so that the user can exercise control over queues and interruptions.</p>
+				<p>When the <a href="#dfn-property" class="internalDFN" data-link-type="dfn">property</a> is not set on an <a href="#dfn-object" class="internalDFN" data-link-type="dfn">object</a> that needs to send updates, the politeness level is the value of the nearest ancestor that sets the <code>aria-live</code> attribute.</p>
+				<p>The <code>aria-live</code> attribute is the primary determination for the order of presentation of changes to live regions. Implementations will also consider the default level of politeness in a <a href="#dfn-role" class="internalDFN" data-link-type="dfn">role</a> when the <code>aria-live</code> attribute is not set in the ancestor chain (e.g., <a href="#log" class="role-reference"><code>log</code></a> changes are <code>polite</code> by default). Items which are <code>assertive</code> will be presented immediately, followed by <code>polite</code> items. User agents or assistive technologies <em class="rfc2119" title="MAY">MAY</em> choose to clear queued changes when an assertive change occurs. (e.g., changes in an assertive region may remove all currently queued changes)</p>
+				<p>When live regions are marked as <code>polite</code>, assistive technologies <em class="rfc2119" title="SHOULD">SHOULD</em> announce updates at the next graceful opportunity, such as at the end of speaking the current sentence or when the user pauses typing. When live regions are marked as <code>assertive</code>, assistive technologies <em class="rfc2119" title="SHOULD">SHOULD</em> notify the user immediately. Because an interruption may disorient users or cause them to not complete their current task, authors <em class="rfc2119" title="SHOULD NOT">SHOULD NOT</em> use the assertive value unless the interruption is imperative.</p>
+			</div>
+			<table class="property-features">
+				<caption>Characteristics:</caption>
+				<thead>
+					<tr>
+						<th scope="col">Characteristic</th>
+						<th scope="col">Value</th>
+					</tr>
+				</thead>
+				<tbody>
+					
+					<tr>
+						<th class="property-applicability-head" scope="row">Used in Roles:</th>
+						<td class="property-applicability">All elements of the base markup</td>
+					</tr>
+					
+					<tr>
+						<th class="property-value-head" scope="row">Value:</th>
+						<td class="property-value"><a href="#valuetype_token">token</a></td>
+					</tr>
+				</tbody>
+			</table>
+			<table class="value-descriptions">
+				<caption>Values:</caption>
+				<thead>
+					<tr>
+						<th scope="col">Value</th>
+						<th scope="col">Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th class="value-name" scope="row">assertive</th>
+						<td class="value-description">Indicates that updates to the region have the highest priority and should be presented the user immediately.</td>
+					</tr>
+					<tr>
+						<th class="value-name" scope="row"><strong class="default">off (default)</strong></th>
+						<td class="value-description">Indicates that updates to the region should not be presented to the user unless the used is currently focused on that region.</td>
+					</tr>
+					<tr>
+						<th class="value-name" scope="row">polite</th>
+						<td class="value-description">Indicates that updates to the region should be presented at the next graceful opportunity, such as at the end of speaking the current sentence or when the user pauses typing.</td>
+					</tr>
+				</tbody>
+			</table>
+		</section>

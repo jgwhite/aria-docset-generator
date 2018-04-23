@@ -1,0 +1,86 @@
+<section class="property notoc" id="aria-autocomplete" typeof="bibo:Chapter" resource="#aria-autocomplete" property="bibo:hasPart">
+			<h4 id="aria-autocomplete-property" resource="#aria-autocomplete-property"><span property="xhv:role" resource="xhv:heading"><span class="property-name" title="aria-autocomplete" aria-describedby="desc-aria-autocomplete"><code>aria-autocomplete</code> <span class="type-indicator">(property)</span></span><span class="permalink" typeof="bookmark"><a href="#aria-autocomplete" aria-label="Permalink for aria-autocomplete (property)" title="Permalink for aria-autocomplete (property)" property="url"><span property="title" content="aria-autocomplete (property)">§</span></a></span></span></h4>
+			<div class="property-description" id="desc-aria-autocomplete" role="definition">
+				<p>Indicates whether inputting text could trigger display of one or more predictions of the user's intended value for an input and specifies how predictions would be presented if they are made.</p>
+				<p>The <code>aria-autocomplete</code> property describes the type of interaction model a <a href="#textbox" class="role-reference"><code>textbox</code></a>, <a href="#searchbox" class="role-reference"><code>searchbox</code></a>, or <a href="#combobox" class="role-reference"><code>combobox</code></a> employs when dynamically helping users complete text input. It distinguishes between two models: the inline model (<code>aria-autocomplete="inline"</code>) that presents a value completion prediction inside the text input and the list model (<code>aria-autocomplete="list"</code>) that presents a collection of possible values in a separate element that pops up adjacent to the text input. It is possible for an input to offer both models at the same time (<code>aria-autocomplete="both"</code>).</p>
+				<p>The <code>aria-autocomplete</code> property is limited to describing predictive behaviors of an input element. Authors <em class="rfc2119" title="SHOULD">SHOULD</em> either omit specifying a value for <code>aria-autocomplete</code> or set <code>aria-autocomplete</code> to <code>none</code> if an input element provides one or more input proposals where none of the proposals are dependent on the specific input provided by the user. For instance, a combobox where the value of <code>aria-autocomplete</code> would be <code>none</code> is a search field that displays suggested values by listing the 5 most recently used search terms without any filtering of the list based on the user's input. Elements with a role that supports <code>aria-autocomplete</code> have a default value for <code>aria-autocomplete</code> of <code>none</code>.</p>
+				<p>When an inline suggestion is made as a user types in an input, suggested text for completing the value of the field dynamically appears in the field after the input cursor, and the suggested value is accepted as the value of the input if the user performs an action that causes focus to leave the field. When an element has <code>aria-autocomplete</code> set to <code>inline</code> or <code>both</code>, authors <em class="rfc2119" title="SHOULD">SHOULD</em> ensure that the automatically suggested portion of the text is presented as selected text. This enables assistive technologies to distinguish between a user's input and the automatic suggestion and, in the event that the suggestion is not the desired value, enables the user to easily delete the suggestion or replace it by continuing to type.</p>
+				<p> If an element has <code>aria-autocomplete</code> set to <code>list</code> or <code>both</code>, authors <em class="rfc2119" title="MUST">MUST</em> ensure both of the following conditions are met:</p>
+				<ol>
+					<li>The element has a value specified for <a href="#aria-controls" class="property-reference"><code>aria-controls</code></a> that refers to the element that contains the collection of suggested values.</li>
+					<li>Either the element or a containing element with role <code>combobox</code> has a value for <a href="#aria-haspopup" class="property-reference"><code>aria-haspopup</code></a> that matches the role of the element that contains the collection of suggested values.</li>
+				</ol>
+				<p>Some implementations of the list model require the user to perform an action, such as moving focus to the suggestion with the <kbd>Down Arrow</kbd> or clicking on the suggestion, in order to choose the suggestion. In such implementations, authors <em class="rfc2119" title="MAY">MAY</em> manage focus by either using <a href="#aria-activedescendant" class="property-reference"><code>aria-activedescendant</code></a> if the collection container supports it or by moving <abbr title="Document Object Model">DOM</abbr> focus to the suggestion. However, other implementations of the list model automatically highlight one suggestion as the selected value that will be accepted when the field loses focus, e.g., when the user presses the <kbd>Tab</kbd> key or clicks on a different field. If an element has <code>aria-autocomplete</code> set to <code>list</code> or <code>both</code>, and if a suggestion is automatically selected as the user provides input, authors <em class="rfc2119" title="MUST">MUST</em> ensure all the following conditions are met:</p>
+				<ol>
+					<li>The collection of suggestions is presented in an element with a role that supports <code>aria-activedescendant</code>.</li>
+					<li>The value of <code>aria-activedescendant</code> set on the input field is dynamically adjusted to refer to the element containing the selected suggestion as described in the definition of <code>aria-activedescendant</code>.</li>
+					<li>
+<abbr title="Document Object Model">DOM</abbr> focus remains on the text input while the suggestions are displayed.</li>
+				</ol>
+				<p>The <code>aria-autocomplete</code> property is not intended to indicate the presence of a completion suggestion, and authors <em class="rfc2119" title="SHOULD NOT">SHOULD NOT</em> dynamically change its value in order to communicate the presence of a suggestion. When an element has <code>aria-autocomplete</code> set to <code>list</code> or <code>both</code>, authors <em class="rfc2119" title="SHOULD">SHOULD</em> use the <a href="#aria-expanded" class="state-reference"><code>aria-expanded</code></a> state to communicate whether the element that presents the suggestion collection is displayed.</p>
+			</div>
+			<table class="property-features">
+				<caption>Characteristics:</caption>
+				<thead>
+					<tr>
+						<th scope="col">Characteristic</th>
+						<th scope="col">Value</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th class="property-related-head" scope="row">Related Concepts:</th>
+						<td class="property-related">XForms selection attribute in <a href="https://www.w3.org/TR/2006/REC-xforms-20060314/slice8.html#ui-selectMany">select</a>
+</td>
+					</tr>
+					<tr>
+						<th class="property-applicability-head" scope="row">Used in Roles:</th>
+						<td class="property-applicability">
+<ul>
+<li><a href="#combobox" class="role-reference"><code>combobox</code></a></li>
+<li><a href="#textbox" class="role-reference"><code>textbox</code></a></li>
+</ul>
+</td>
+					</tr>
+					<tr>
+						<th class="property-descendants-head" scope="row">Inherits into Roles:</th>
+						<td class="property-descendants">
+<ul>
+<li><a href="#searchbox" class="role-reference"><code>searchbox</code></a></li>
+</ul>
+</td>
+					</tr>
+					<tr>
+						<th class="property-value-head" scope="row">Value:</th>
+						<td class="property-value"><a href="#valuetype_token">token</a></td>
+					</tr>
+				</tbody>
+			</table>
+			<table class="value-descriptions">
+				<caption>Values:</caption>
+				<thead>
+					<tr>
+						<th scope="col">Value</th>
+						<th scope="col">Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th class="value-name" scope="row">inline</th>
+						<td class="value-description">When a user is providing input, text suggesting one way to complete the provided input may be dynamically inserted after the caret.</td>
+					</tr>
+					<tr>
+						<th class="value-name" scope="row">list</th>
+						<td class="value-description">When a user is providing input, an element containing a collection of values that could complete the provided input may be displayed.</td>
+					</tr>
+                    <tr>
+                        <th class="value-name" scope="row">both</th>
+                        <td class="value-description">When a user is providing input, an element containing a collection of values that could complete the provided input may be displayed. If displayed, one value in the collection is automatically selected, and the text needed to complete the automatically selected value appears after the caret in the input.</td>
+                    </tr>
+					<tr>
+						<th class="value-name" scope="row"><strong class="default">none (default)</strong></th>
+						<td class="value-description">When a user is providing input, an automatic suggestion that attempts to predict how the user intends to complete the input is not displayed.</td>
+					</tr>
+				</tbody>
+			</table>
+		</section>

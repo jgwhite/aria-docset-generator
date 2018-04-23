@@ -1,0 +1,61 @@
+<section class="property notoc" id="aria-modal" typeof="bibo:Chapter" resource="#aria-modal" property="bibo:hasPart">
+			<h4 id="aria-modal-property" resource="#aria-modal-property"><span property="xhv:role" resource="xhv:heading"><span class="property-name" title="aria-modal" aria-describedby="desc-aria-modal"><code>aria-modal</code> <span class="type-indicator">(property)</span></span><span class="permalink" typeof="bookmark"><a href="#aria-modal" aria-label="Permalink for aria-modal (property)" title="Permalink for aria-modal (property)" property="url"><span property="title" content="aria-modal (property)">§</span></a></span></span></h4>
+			<div class="property-description" id="desc-aria-modal" role="definition">
+				<p>Indicates whether an <a href="#dfn-element" class="internalDFN" data-link-type="dfn">element</a> is modal when displayed.</p>
+				<p>The <a href="#aria-modal" class="property-reference"><code>aria-modal</code></a> <a href="#dfn-attribute" class="internalDFN" data-link-type="dfn">attribute</a> is used to indicate that the presence of a "modal" element precludes usage of other content on the page. For example, when a modal dialog is displayed, it is expected that the user's interaction is limited to the contents of the dialog, until the modal dialog loses focus or is no longer displayed.</p>
+				<p>When a modal element is displayed, assistive technologies <em class="rfc2119" title="SHOULD">SHOULD</em> navigate to the element unless focus has explicitly been set elsewhere. Assistive technologies <em class="rfc2119" title="MAY">MAY</em> limit navigation to the modal element's contents. If focus moves to an element outside the modal element, assistive technologies <em class="rfc2119" title="SHOULD NOT">SHOULD NOT</em> limit navigation to the modal element.</p>
+				<p>When a modal element is displayed, authors <em class="rfc2119" title="MUST">MUST</em> ensure the interface can be controlled using only descendants of the modal element. In other words, if a modal dialog has a close button, the button should be a descendant of the dialog. When a modal element is displayed, authors <em class="rfc2119" title="SHOULD">SHOULD</em> mark all other contents as inert (such as "inert subtrees" in <abbr title="Hypertext Markup Language">HTML</abbr>) if the ability to do so exists in the host language.</p>
+			</div>
+			<table class="property-features">
+				<caption>Characteristics:</caption>
+				<thead>
+					<tr>
+						<th scope="col">Characteristic</th>
+						<th scope="col">Value</th>
+					</tr>
+				</thead>
+				<tbody>
+					
+					<tr>
+						<th class="property-applicability-head" scope="row">Used in Roles:</th>
+						<td class="property-applicability">
+<ul>
+<li><a href="#window" class="role-reference"><code>window</code></a></li>
+</ul>
+</td>
+					</tr>
+					<tr>
+						<th class="property-descendants-head" scope="row">Inherits into Roles:</th>
+						<td class="property-descendants">
+<ul>
+<li><a href="#alertdialog" class="role-reference"><code>alertdialog</code></a></li>
+<li><a href="#dialog" class="role-reference"><code>dialog</code></a></li>
+</ul>
+</td>
+					</tr>
+					<tr>
+						<th class="property-value-head" scope="row">Value:</th>
+						<td class="property-value"><a href="#valuetype_true-false">true/false</a></td>
+					</tr>
+				</tbody>
+			</table>
+			<table class="value-descriptions">
+				<caption>Values:</caption>
+				<thead>
+					<tr>
+						<th scope="col">Value</th>
+						<th scope="col">Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th class="value-name" scope="row"><strong class="default">false (default)</strong></th>
+						<td class="value-description">Element is not modal.</td>
+					</tr>
+					<tr>
+						<th class="value-name" scope="row">true</th>
+						<td class="value-description">Element is modal.</td>
+					</tr>
+				</tbody>
+			</table>
+		</section>

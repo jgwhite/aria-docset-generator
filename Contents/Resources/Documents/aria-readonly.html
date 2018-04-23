@@ -1,0 +1,82 @@
+<section class="property notoc" id="aria-readonly" typeof="bibo:Chapter" resource="#aria-readonly" property="bibo:hasPart">
+			<h4 id="aria-readonly-property" resource="#aria-readonly-property"><span property="xhv:role" resource="xhv:heading"><span class="property-name" title="aria-readonly" aria-describedby="desc-aria-readonly"><code>aria-readonly</code> <span class="type-indicator">(property)</span></span><span class="permalink" typeof="bookmark"><a href="#aria-readonly" aria-label="Permalink for aria-readonly (property)" title="Permalink for aria-readonly (property)" property="url"><span property="title" content="aria-readonly (property)">§</span></a></span></span></h4>
+			<div class="property-description" id="desc-aria-readonly" role="definition">
+				<p> Indicates that the <a href="#dfn-element" class="internalDFN" data-link-type="dfn">element</a> is not editable, but is otherwise <a href="#dfn-operable" class="internalDFN" data-link-type="dfn">operable</a>. See related <a href="#aria-disabled" class="state-reference"><code>aria-disabled</code></a>.</p>
+				<p>This means the user can read but not set the value of the <a href="#dfn-widget" class="internalDFN" data-link-type="dfn">widget</a>. Readonly elements are relevant to the user, and application authors <em class="rfc2119" title="SHOULD NOT">SHOULD NOT</em> restrict navigation to the element or its focusable descendants. Other actions such as copying the value of the element are also supported. This is in contrast to disabled elements, to which applications might not allow user navigation to descendants.</p>
+				<p>Examples include:</p>
+				<ul>
+					<li>A form element which represents a constant.</li>
+					<li>Row or column headers in a spreadsheet grid.</li>
+					<li>The result of a calculation such as a shopping cart total.</li>
+				</ul>
+			</div>
+			<table class="property-features">
+				<caption>Characteristics:</caption>
+				<thead>
+					<tr>
+						<th scope="col">Characteristic</th>
+						<th scope="col">Value</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th class="property-related-head" scope="row">Related Concepts:</th>
+						<td class="property-related">
+<cite><a href="https://www.w3.org/TR/2007/REC-xforms-20071029/">XForms</a></cite> [<cite><a class="bibref" href="#bib-XFORMS10">XFORMS10</a></cite>] Readonly</td>
+					</tr>
+					<tr>
+						<th class="property-applicability-head" scope="row">Used in Roles:</th>
+						<td class="property-applicability">
+<ul>
+<li><a href="#checkbox" class="role-reference"><code>checkbox</code></a></li>
+<li><a href="#combobox" class="role-reference"><code>combobox</code></a></li>
+<li><a href="#grid" class="role-reference"><code>grid</code></a></li>
+<li><a href="#gridcell" class="role-reference"><code>gridcell</code></a></li>
+<li><a href="#listbox" class="role-reference"><code>listbox</code></a></li>
+<li><a href="#radiogroup" class="role-reference"><code>radiogroup</code></a></li>
+<li><a href="#slider" class="role-reference"><code>slider</code></a></li>
+<li><a href="#spinbutton" class="role-reference"><code>spinbutton</code></a></li>
+<li><a href="#textbox" class="role-reference"><code>textbox</code></a></li>
+</ul>
+</td>
+					</tr>
+					<tr>
+						<th class="property-descendants-head" scope="row">Inherits into Roles:</th>
+						<td class="property-descendants">
+<ul>
+<li><a href="#columnheader" class="role-reference"><code>columnheader</code></a></li>
+<li><a href="#menuitemcheckbox" class="role-reference"><code>menuitemcheckbox</code></a></li>
+<li><a href="#menuitemradio" class="role-reference"><code>menuitemradio</code></a></li>
+<li><a href="#rowheader" class="role-reference"><code>rowheader</code></a></li>
+<li><a href="#searchbox" class="role-reference"><code>searchbox</code></a></li>
+<li><a href="#switch" class="role-reference"><code>switch</code></a></li>
+<li><a href="#treegrid" class="role-reference"><code>treegrid</code></a></li>
+</ul>
+</td>
+					</tr>
+					<tr>
+						<th class="property-value-head" scope="row">Value:</th>
+						<td class="property-value"><a href="#valuetype_true-false">true/false</a></td>
+					</tr>
+				</tbody>
+			</table>
+			<table class="value-descriptions">
+				<caption>Values:</caption>
+				<thead>
+					<tr>
+						<th scope="col">Value</th>
+						<th scope="col">Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th class="value-name" scope="row"><strong class="default">false (default)</strong></th>
+						<td class="value-description">The user can set the value of the element.</td>
+					</tr>
+					<tr>
+						<th class="value-name" scope="row">true</th>
+						<td class="value-description">The user cannot change the value of the element.</td>
+					</tr>
+				</tbody>
+			</table>
+		</section>

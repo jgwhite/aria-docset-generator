@@ -1,0 +1,60 @@
+<section class="property notoc" id="aria-sort" typeof="bibo:Chapter" resource="#aria-sort" property="bibo:hasPart">
+			<h4 id="aria-sort-property" resource="#aria-sort-property"><span property="xhv:role" resource="xhv:heading"><span class="property-name" title="aria-sort" aria-describedby="desc-aria-sort"><code>aria-sort</code> <span class="type-indicator">(property)</span></span><span class="permalink" typeof="bookmark"><a href="#aria-sort" aria-label="Permalink for aria-sort (property)" title="Permalink for aria-sort (property)" property="url"><span property="title" content="aria-sort (property)">§</span></a></span></span></h4>
+			<div class="property-description" id="desc-aria-sort" role="definition">
+				<p>Indicates if items in a table or grid are sorted in ascending or descending order.</p>
+				<p>Authors <em class="rfc2119" title="SHOULD">SHOULD</em> only apply this <a href="#dfn-property" class="internalDFN" data-link-type="dfn">property</a> to table headers or grid headers. If the property is not provided, there is no defined sort order. For each table or grid, authors <em class="rfc2119" title="SHOULD">SHOULD</em> apply <a href="#aria-sort" class="property-reference"><code>aria-sort</code></a> to only one header at a time.</p>
+			</div>
+			<table class="property-features">
+				<caption>Characteristics:</caption>
+				<thead>
+					<tr>
+						<th scope="col">Characteristic</th>
+						<th scope="col">Value</th>
+					</tr>
+				</thead>
+				<tbody>
+					
+					<tr>
+						<th class="property-applicability-head" scope="row">Used in Roles:</th>
+						<td class="property-applicability">
+<ul>
+<li><a href="#columnheader" class="role-reference"><code>columnheader</code></a></li>
+<li><a href="#rowheader" class="role-reference"><code>rowheader</code></a></li>
+</ul>
+</td>
+					</tr>
+					
+					<tr>
+						<th class="property-value-head" scope="row">Value:</th>
+						<td class="property-value"><a href="#valuetype_token">token</a></td>
+					</tr>
+				</tbody>
+			</table>
+			<table class="value-descriptions">
+				<caption>Values:</caption>
+				<thead>
+					<tr>
+						<th scope="col">Value</th>
+						<th scope="col">Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th class="value-name" scope="row">ascending</th>
+						<td class="value-description">Items are sorted in ascending order by this column.</td>
+					</tr>
+					<tr>
+						<th class="value-name" scope="row">descending</th>
+						<td class="value-description">Items are sorted in descending order by this column.</td>
+					</tr>
+					<tr>
+						<th class="value-name" scope="row"><strong class="default">none (default)</strong></th>
+						<td class="value-description">There is no defined sort applied to the column.</td>
+					</tr>
+					<tr>
+						<th class="value-name" scope="row">other</th>
+						<td class="value-description">A sort algorithm other than ascending or descending has been applied.</td>
+					</tr>
+				</tbody>
+			</table>
+		</section>

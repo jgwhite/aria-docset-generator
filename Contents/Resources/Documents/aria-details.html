@@ -1,0 +1,62 @@
+<section class="property notoc" id="aria-details" typeof="bibo:Chapter" resource="#aria-details" property="bibo:hasPart">
+			<h4 id="aria-details-property" resource="#aria-details-property"><span property="xhv:role" resource="xhv:heading"><span class="property-name" title="aria-details" aria-describedby="desc-aria-details"><code>aria-details</code> <span class="type-indicator">(property)</span></span><span class="permalink" typeof="bookmark"><a href="#aria-details" aria-label="Permalink for aria-details (property)" title="Permalink for aria-details (property)" property="url"><span property="title" content="aria-details (property)">§</span></a></span></span></h4>
+			<div class="property-description" id="desc-aria-details" role="definition">
+				<p>Identifies the <a href="#dfn-element" class="internalDFN" data-link-type="dfn">element</a> that provides a detailed, extended description for the <a href="#dfn-object" class="internalDFN" data-link-type="dfn">object</a>. See related <a href="#aria-describedby" class="property-reference"><code>aria-describedby</code></a>.</p>
+				<p>The <code>aria-details</code> attribute references a single element that provides more detailed information than would normally be provided by <code>aria-describedby</code>. It enables <a href="#dfn-assistive-technology" class="internalDFN" data-link-type="dfn">assistive technologies</a> to make users aware of the availability of an extended description as well as navigate to it. Authors <em class="rfc2119" title="SHOULD">SHOULD</em> ensure the element referenced by <code>aria-details</code> is visible to all users.</p>
+				<p>Unlike elements referenced by <code>aria-describedby</code>, the element referenced by <code>aria-details</code> is not used in either the Accessible <a href="https://www.w3.org/TR/accname-aam-1.1/#mapping_additional_nd_name">Name Computation</a> or the Accessible <a href="https://www.w3.org/TR/accname-aam-1.1/#mapping_additional_nd_description">Description Computation</a> as defined in the Accessible Name and Description specification [<cite><a class="bibref" href="#bib-accname-aam-1.1">accname-aam-1.1</a></cite>]. Thus, the content of an element referenced by <code>aria-details</code> is not flattened to a string when presented to assistive technology users. This makes <code>aria-details</code> particularly useful when converting the information to a string would cause a loss of information or make the extended description more difficult to understand.</p>
+				<p>In some user agents, multiple reference relationships for descriptive information are not supported by the accessibility <abbr title="Application Programing Interfaces">API</abbr>. In such cases, if both <code>aria-describedby</code> and <code>aria-details</code> are provided on an element, <code>aria-details</code> takes precedence.</p>
+				<p>A common use for <code>aria-details</code> is in digital publishing where an extended description needs to be conveyed in a book that requires structural markup or the embedding of other technology to provide illustrative content. The following example demonstrates this scenario.</p>
+				<div class="example">
+<div class="example-title marker"><span>Example 17</span></div>
+<pre class="highlight hljs xml" aria-busy="false" aria-live="polite"><span class="hljs-comment">&lt;!-- Provision of an extended description --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"pythagorean.jpg"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"Pythagorean Theorem"</span> <span class="hljs-attr">aria-details</span>=<span class="hljs-string">"det"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">details</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"det"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">summary</span>&gt;</span>Example<span class="hljs-tag">&lt;/<span class="hljs-name">summary</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
+    The Pythagorean Theorem is a relationship in Euclidean Geometry between the three sides of
+    a right triangle, where the square of the hypotenuse is the sum of the squares of the two
+    opposing sides.
+  <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
+    The following drawing illustrates an application of the Pythagorean Theorem when used to
+    construct a skateboard ramp.
+  <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">object</span> <span class="hljs-attr">data</span>=<span class="hljs-string">"skatebd-ramp.svg"</span>  <span class="hljs-attr">type</span>=<span class="hljs-string">"image/svg+xml"</span>/&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
+    In this example you will notice a skateboard with a base and vertical board whose width
+    is the width of the ramp. To compute how long the ramp must be, simply calculate the
+    base length, square it, sum it with the square of the height of the ramp, and take the
+    square root of the sum.
+  <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">details</span>&gt;</span></pre>
+</div>
+				<p>Alternatively, <code>aria-details</code> may refer to a link to a web page having the extended description, as shown in the following example.</p>
+				<div class="example">
+<div class="example-title marker"><span>Example 18</span></div>
+<pre class="highlight hljs xml" aria-busy="false" aria-live="polite"><span class="hljs-comment">&lt;!-- Provision of an extended description --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"pythagorean.jpg"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"Pythagorean Theorem"</span> <span class="hljs-attr">aria-details</span>=<span class="hljs-string">"det"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
+  See an <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"http://foo.com/pt.html"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"det"</span>&gt;</span>Application of the Pythagorean Theorem<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>.
+<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></pre>
+</div>
+			</div>
+			<table class="property-features">
+				<caption>Characteristics:</caption>
+				<thead>
+					<tr>
+						<th scope="col">Characteristic</th>
+						<th scope="col">Value</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th class="property-applicability-head" scope="row">Used in Roles:</th>
+						<td class="property-applicability">All elements of the base markup</td>
+					</tr>
+					<tr>
+						<th class="property-value-head" scope="row">Value:</th>
+						<td class="property-value"><a href="#valuetype_idref">ID reference</a></td>
+					</tr>
+				</tbody>
+			</table>
+		</section>

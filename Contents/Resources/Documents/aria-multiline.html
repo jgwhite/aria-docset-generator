@@ -1,0 +1,62 @@
+<section class="property notoc" id="aria-multiline" typeof="bibo:Chapter" resource="#aria-multiline" property="bibo:hasPart">
+			<h4 id="aria-multiline-property" resource="#aria-multiline-property"><span property="xhv:role" resource="xhv:heading"><span class="property-name" title="aria-multiline" aria-describedby="desc-aria-multiline"><code>aria-multiline</code> <span class="type-indicator">(property)</span></span><span class="permalink" typeof="bookmark"><a href="#aria-multiline" aria-label="Permalink for aria-multiline (property)" title="Permalink for aria-multiline (property)" property="url"><span property="title" content="aria-multiline (property)">§</span></a></span></span></h4>
+			<div class="property-description" id="desc-aria-multiline" role="definition">
+				<p>Indicates whether a text box accepts multiple lines of input or only a single line.</p>
+				<!-- keep the following para synced with its equivalent in #textbox -->
+				<div class="note">
+<div role="heading" class="note-title marker" id="h-note-47" aria-level="5"><span>Note</span></div>
+<p class="">In most user agent implementations, the default behavior of the <kbd>ENTER</kbd> or <kbd>RETURN</kbd> key is different between the single-line and multi-line text fields in <abbr title="Hypertext Markup Language">HTML</abbr>. When user has focus in a single-line <code>&lt;input type="text"&gt;</code> element, the keystroke usually submits the form. When user has focus in a multi-line <code>&lt;textarea&gt;</code> element, the keystroke inserts a line break. The <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> <code>textbox</code> role differentiates these types of boxes with the <a href="#aria-multiline" class="property-reference"><code>aria-multiline</code></a> attribute, so authors are advised to be aware of this distinction when designing the field.</p>
+</div>
+			</div>
+			<table class="property-features">
+				<caption>Characteristics:</caption>
+				<thead>
+					<tr>
+						<th scope="col">Characteristic</th>
+						<th scope="col">Value</th>
+					</tr>
+				</thead>
+				<tbody>
+					
+					<tr>
+						<th class="property-applicability-head" scope="row">Used in Roles:</th>
+						<td class="property-applicability">
+<ul>
+<li><a href="#textbox" class="role-reference"><code>textbox</code></a></li>
+</ul>
+</td>
+					</tr>
+					<tr>
+						<th class="property-descendants-head" scope="row">Inherits into Roles:</th>
+						<td class="property-descendants">
+<ul>
+<li><a href="#searchbox" class="role-reference"><code>searchbox</code></a></li>
+</ul>
+</td>
+					</tr>
+					<tr>
+						<th class="property-value-head" scope="row">Value:</th>
+						<td class="property-value"><a href="#valuetype_true-false">true/false</a></td>
+					</tr>
+				</tbody>
+			</table>
+			<table class="value-descriptions">
+				<caption>Values:</caption>
+				<thead>
+					<tr>
+						<th scope="col">Value</th>
+						<th scope="col">Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th class="value-name" scope="row"><strong class="default">false (default)</strong></th>
+						<td class="value-description">This is a single-line text box.</td>
+					</tr>
+					<tr>
+						<th class="value-name" scope="row">true</th>
+						<td class="value-description">This is a multi-line text box.</td>
+					</tr>
+				</tbody>
+			</table>
+		</section>

@@ -1,0 +1,81 @@
+<section class="role notoc" id="alertdialog" typeof="bibo:Chapter" resource="#alertdialog" property="bibo:hasPart">
+			<h4 class="role-name" title="alertdialog" aria-describedby="desc-alertdialog" id="alertdialog-0" resource="#alertdialog-0"><span property="xhv:role" resource="xhv:heading"><code>alertdialog</code> <span class="type-indicator">(role)</span><span class="permalink" typeof="bookmark"><a href="#alertdialog" aria-label="Permalink for alertdialog (role)" title="Permalink for alertdialog (role)" property="url"><span property="title" content="alertdialog (role)">§</span></a></span></span></h4>
+			<div class="role-description" id="desc-alertdialog" role="definition">
+				<p>A type of dialog that contains an alert message, where initial focus goes to an <a href="#dfn-element" class="internalDFN" data-link-type="dfn">element</a> within the dialog. See related <a href="#alert" class="role-reference"><code>alert</code></a> and <a href="#dialog" class="role-reference"><code>dialog</code></a>.</p>
+				<p>Alert dialogs are used to convey messages to alert the user. The <code>alertdialog</code> <a href="#dfn-role" class="internalDFN" data-link-type="dfn">role</a> goes on the node containing both the alert message and the rest of the dialog. Content authors <em class="rfc2119" title="SHOULD">SHOULD</em> make alert dialogs modal by ensuring that, while the <code>alertdialog</code> is shown, keyboard and mouse interactions only operate within the dialog. See <a href="#aria-modal" class="property-reference"><code>aria-modal</code></a>.</p>
+				<p>Unlike <code>alert</code>, <code>alertdialog</code> can receive a response from the user. For example, to confirm that the user understands the alert being generated. When the alert dialog is displayed, authors <em class="rfc2119" title="SHOULD">SHOULD</em> set focus to an active element within the alert dialog, such as a form edit field or an OK button. The <a href="#dfn-user-agent" class="internalDFN" data-link-type="dfn">user agent</a> <em class="rfc2119" title="SHOULD">SHOULD</em> fire a system alert <a href="#dfn-event" class="internalDFN" data-link-type="dfn">event</a> through the accessibility <abbr title="Application Programing Interfaces">API</abbr> when the alert is created, provided one is specified by the intended <a href="#dfn-accessibility-api" class="internalDFN" data-link-type="dfn">accessibility <abbr title="Application Programing Interfaces">API</abbr></a>.</p>
+				<p>Authors <em class="rfc2119" title="SHOULD">SHOULD</em> use <a href="#aria-describedby" class="property-reference"><code>aria-describedby</code></a> on an <code>alertdialog</code> to reference the alert message element in the dialog. If they do not, an <a href="#dfn-assistive-technology" class="internalDFN" data-link-type="dfn">assistive technology</a> can resort to its internal recovery mechanism to determine the contents of the alert message.</p>
+			</div>
+			<table class="role-features">
+				<caption>Characteristics:</caption>
+				<thead>
+					<tr>
+						<th scope="col">Characteristic</th>
+						<th scope="col">Value</th>
+					</tr>
+				</thead>
+				<tbody>
+					
+					<tr>
+						<th class="role-parent-head" scope="row">Superclass Role:</th>
+						<td class="role-parent">
+							<ul>
+								<li><a href="#alert" class="role-reference"><code>alert</code></a></li>
+								<li><a href="#dialog" class="role-reference"><code>dialog</code></a></li>
+							</ul>
+						</td>
+					</tr>
+					
+					
+					<tr>
+						<th class="role-related-head" scope="row">Related Concepts:</th>
+						<td class="role-related"><a href="https://www.w3.org/TR/2007/REC-xforms-20071029/#ui-common-elements-alert">XForms alert</a></td>
+					</tr>
+					
+					
+					
+					
+					<tr>
+						<th class="role-inherited-head" scope="row">Inherited States and Properties:</th>
+						<td class="role-inherited">
+<ul>
+<li><a href="#aria-atomic" class="property-reference"><code>aria-atomic</code></a></li>
+<li><a href="#aria-busy" class="state-reference"><code>aria-busy (state)</code></a></li>
+<li><a href="#aria-controls" class="property-reference"><code>aria-controls</code></a></li>
+<li><a href="#aria-current" class="state-reference"><code>aria-current (state)</code></a></li>
+<li><a href="#aria-describedby" class="property-reference"><code>aria-describedby</code></a></li>
+<li><a href="#aria-details" class="property-reference"><code>aria-details</code></a></li>
+<li><a href="#aria-disabled" class="state-reference"><code>aria-disabled (state)</code></a></li>
+<li><a href="#aria-dropeffect" class="property-reference"><code>aria-dropeffect</code></a></li>
+<li><a href="#aria-errormessage" class="property-reference"><code>aria-errormessage</code></a></li>
+<li><a href="#aria-expanded" class="state-reference"><code>aria-expanded (state)</code></a></li>
+<li><a href="#aria-flowto" class="property-reference"><code>aria-flowto</code></a></li>
+<li><a href="#aria-grabbed" class="state-reference"><code>aria-grabbed (state)</code></a></li>
+<li><a href="#aria-haspopup" class="property-reference"><code>aria-haspopup</code></a></li>
+<li><a href="#aria-hidden" class="state-reference"><code>aria-hidden (state)</code></a></li>
+<li><a href="#aria-invalid" class="state-reference"><code>aria-invalid (state)</code></a></li>
+<li><a href="#aria-keyshortcuts" class="property-reference"><code>aria-keyshortcuts</code></a></li>
+<li><a href="#aria-label" class="property-reference"><code>aria-label</code></a></li>
+<li><a href="#aria-labelledby" class="property-reference"><code>aria-labelledby</code></a></li>
+<li><a href="#aria-live" class="property-reference"><code>aria-live</code></a></li>
+<li><a href="#aria-modal" class="property-reference"><code>aria-modal</code></a></li>
+<li><a href="#aria-owns" class="property-reference"><code>aria-owns</code></a></li>
+<li><a href="#aria-relevant" class="property-reference"><code>aria-relevant</code></a></li>
+<li><a href="#aria-roledescription" class="property-reference"><code>aria-roledescription</code></a></li>
+</ul>
+</td>
+					</tr>
+					<tr>
+						<th class="role-namefrom-head" scope="row">Name From:</th>
+						<td class="role-namefrom">author</td>
+					</tr>
+					<tr>
+						<th class="role-namerequired-head" scope="row">Accessible Name Required:</th>
+						<td class="role-namerequired">True</td>
+					</tr>
+					
+					
+					
+				</tbody>
+			</table>
+		</section>
