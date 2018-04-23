@@ -5,41 +5,63 @@ require 'nokogiri'
 require 'fileutils'
 require 'pry'
 
-base_path = File.expand_path("../", __dir__)
-resources_path = File.join(base_path, "Contents", "Resources")
-index_path = File.join(resources_path, "docSet.dsidx")
-documents_path = File.join(resources_path, "Documents")
+BASE_PATH = File.expand_path("../", __dir__)
+RESOURCES_PATH = File.join(BASE_PATH, "Contents", "Resources")
+INDEX_PATH = File.join(RESOURCES_PATH, "docSet.dsidx")
+DOCUMENTS_PATH = File.join(RESOURCES_PATH, "Documents")
+CSS = File.read(File.join(BASE_PATH, "styles.css"))
 
-source_url = "https://www.w3.org/TR/wai-aria-1.1/"
-source_doc = Nokogiri::HTML(open(source_url))
+SOURCE_URL = "https://www.w3.org/TR/wai-aria-1.1/"
+SOURCE_DOC = Nokogiri::HTML(open(SOURCE_URL))
 
-FileUtils.rm_f(index_path)
+def section_to_html(section)
+  resource = section["resource"]
+  builder = Nokogiri::HTML::Builder.new do |b|
+    b.html do
+      b.comment "Online page at #{SOURCE_URL}#{resource}"
+      b.head do
+        b.style(type: "text/css") do
+          b.text CSS
+        end
+      end
+      b.body do
+        b << section
+      end
+    end
+  end
 
-IO.popen(["sqlite3", index_path], "w") do |db|
+  builder.to_html
+end
+
+FileUtils.rm_f(INDEX_PATH)
+FileUtils.rm_f(Dir[File.join(DOCUMENTS_PATH, "*")])
+
+IO.popen(["sqlite3", INDEX_PATH], "w") do |db|
 
   db << "CREATE TABLE searchIndex(id INTEGER PRIMARY KEY, name TEXT, type TEXT, path TEXT);\n"
   db << "CREATE UNIQUE INDEX anchor ON searchIndex (name, type, path);\n"
 
-  source_doc.css("section.role").each do |section|
+  SOURCE_DOC.css("section.role").each do |section|
     name = section.at_css("code").text
     type = "Class"
-    path = source_url + section["resource"]
-    path = "#{name}.html"
+    fn = section["resource"][1..-1]
+    path = "#{fn}.html"
 
-    File.open(File.join(documents_path, path), "w") do |file|
-      file << section.to_html
+    File.open(File.join(DOCUMENTS_PATH, path), "w") do |file|
+      file << section_to_html(section)
     end
 
     db << "INSERT OR IGNORE INTO searchIndex(name, type, path) VALUES ('#{name}', '#{type}', '#{path}');\n"
   end
 
-  source_doc.css("section.property").each do |section|
+  SOURCE_DOC.css("section.property").each do |section|
     name = section.at_css("code").text
     type = "Attribute"
-    path = "#{name}.html"
+    fn = section["resource"][1..-1]
+    path = "#{fn}.html"
 
-    File.open(File.join(documents_path, path), "w") do |file|
-      file << section.to_html
+    File.open(File.join(DOCUMENTS_PATH, path), "w") do |file|
+      file << section_to_html(section)
     end
 
     db << "INSERT OR IGNORE INTO searchIndex(name, type, path) VALUES ('#{name}', '#{type}', '#{path}');\n"

@@ -1,5 +1,268 @@
-<section class="role notoc" id="math" typeof="bibo:Chapter" resource="#math" property="bibo:hasPart">
-			<h4 class="role-name" title="math" aria-describedby="desc-math" id="math-0" resource="#math-0"><span property="xhv:role" resource="xhv:heading"><code>math</code> <span class="type-indicator">(role)</span><span class="permalink" typeof="bookmark"><a href="#math" aria-label="Permalink for math (role)" title="Permalink for math (role)" property="url"><span property="title" content="math (role)">§</span></a></span></span></h4>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<!--Online page at https://www.w3.org/TR/wai-aria-1.1/#math--><head><style type="text/css">
+* { 
+	/* add default line-height so different fonts don't affect the rhythm of line-box height */
+	line-height:1.2; /* [sic] unitless multiplier, not EM size */
+}
+ol{ list-style:decimal; }
+ol ol{ list-style:upper-alpha; }
+ol ol ol{ list-style:lower-roman; }
+ol ol ol ol{ list-style:lower-alpha; }
+
+/* following rules are specifically for the complex nested list in #textequivalentcomputation */
+/* but perhaps we should abstract this out to a more general classname (like .stepbystep or .nested) instead */
+#textequivalentcomputation li{
+	margin-top:0.5em;
+	margin-bottom:0.5em;
+}
+#textequivalentcomputation > ol{
+	padding-top:0.5em;
+	padding-bottom:0.7em;
+	border:solid 1px #ccc;
+}
+#textequivalentcomputation > ol > li{
+	margin-right:2em;
+}
+
+/* not clear where/why the following two blocks are used; spacing on .role causes problem in html-aam; commenting out for now
+ * 
+.role, .state, .property, .widget {
+	margin-left: 2em;
+	margin-bottom: 4ex;
+}
+
+.role-name, .state-name, .property-name, .widget-name {
+	/* margin-left: -2em; */
+/*	font-size: 100%;
+	font-weight: bold;
+	font-style: normal;
+	font-variant: normal;
+}
+*/
+.role-parent ul,
+.role-base ul,
+.role-children ul,
+.role-related ul,
+.role-scope ul,
+.role-mustcontain ul,
+.role-required-properties ul,
+.role-properties ul,
+.role-inherited ul,
+.role-namefrom ul,
+.state-value ul, .state-related ul,
+.state-applicability ul,
+.state-descendants ul,
+.property-value ul,
+.property-related ul,
+.property-applicability ul,
+.property-descendants ul,
+.quickref-required ul,
+.quickref-supported ul {
+	margin:0;
+	padding:0;
+	list-style-type:none;
+}
+/*
+.role-parent ul li, .role-children ul li, .role-related ul li, .role-scope ul li, .role-mustcontain ul li, .role-required-properties ul li, .role-properties ul li, .role-inherited ul li, .role-namefrom ul li, .state-value ul li, .state-related ul li, .state-applicability ul li, .state-descendants ul li, .property-value ul li, .property-related ul li, .property-applicability ul li, .property-descendants ul li {
+	display: inline;
+}
+.role-parent ul li:after, .role-children ul li:after, .role-related ul li:after, .role-scope ul li:after, .role-mustcontain ul li:after, .role-required-properties ul li:after, .role-properties ul li:after, .role-inherited ul li:after, .role-namefrom ul li:after, .state-value ul li:after, .state-related ul li:after, .state-applicability ul li:after, .state-descendants ul li:after, .property-value ul li:after, .property-related ul li:after, .property-applicability ul li:after, .property-descendants ul li:after {
+	content: " ";
+}
+*/
+/*
+.widget-description ul, .widget-keyboard ul, .widget-mouse ul, .widget-styling ul, .widget-aria ul, .widget-example ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+*/
+
+table{
+	border:solid 2px #999;
+	border-width:1px 0 0 1px;
+	margin:0.1em 0 1em;
+	padding:0;
+	border-spacing:0;
+	border-collapse:collapse;
+}
+th, td{
+	border:solid 2px #999;
+	border-width:0 1px 1px 0;
+	padding:0.15em 0.3em 0.1em;
+	vertical-align:top;
+	text-align:left;
+}
+th{
+	background-color:#eee;
+}
+caption{
+	text-align:left;
+	color:#555;
+	font-style:normal;
+	margin:1em 0 0.1em;
+	padding:0 0 0 0.3em;
+}
+table.role-features th, table.role-features td, table.state-features th, table.state-features td, table.property-features th, table.property-features td, table.value-descriptions th, table.value-descriptions td {
+	min-width:20em;
+}
+table.role-features tbody th, table.state-features tbody th, table.property-features tbody th, table.value-descriptions tbody th {
+    text-align: left !important;
+}
+th+th, td+td{
+	width:auto;
+}
+/*
+.role-abstract-head, .role-parent-head, .role-children-head, .role-related-head, .role-scope-head, .role-mustcontain-head, .role-required-properties-head, .role-properties-head, .role-inherited-head, .role-namefrom-head, .role-child-presentational-head, .role-presentational-inherited-head, .state-value-head, .state-related-head, .state-applicability-head, .property-value-head, .property-related-head, .property-applicability-head, .widget-description-head, .widget-keyboard-head, .widget-mouse-head, .widget-styling-head, .widget-aria-head, .widget-example-head {
+	width: 20em;
+}
+table.role-features, table.role-features tbody tr td, table.role-features thead tr th, table.state-features, table.state-features tbody tr td, table.state-features thead tr th, table.property-features, table.property-features tbody tr td, table.property-features thead tr th, table.widget-features, table.widget-features tbody tr td, table.widget-features tbody tr th {
+	border: 1px solid #000000;
+}
+table.role-properties tbody tr th, table.state-properties tbody tr th, table.property-properties tbody tr th {
+	padding-right: 1em;
+}
+table.value-descriptions caption {
+	margin-top: 1em;
+}
+*/
+
+html code, html pre, html kbd{ /* more specific selector than the default W3C style sheet */
+	/* Most browsers default 'monospace' to Courier, which has an ex-height of about 60% normal size. */
+	/* Monaco has a normal ex-height so font sizes appear more consistent with surrounding non-monospaced text. */
+	font-family: "Monaco", "Courier New", "Courier", monospace;
+	font-family: "Monaco", "Courier New", "Courier"; /* declare as separate rule to account for browser font-size inconsistencies, monospace fallback from previous rule should still work in the [almost non-existant] case that a user system does not have Courier */
+	font-size:0.9em;
+}
+html pre { /* more specific selector than the default W3C style sheet */
+	border: solid 1px #999;
+	background-color: #fcfcfc;
+	margin:1em 0;
+	padding:0.5em 0.8em;
+	font-size:0.75em; /* text in blocks code blocks looked too big now that font is back to normal size */
+	line-height:1.4; /* [sic] unitless multiplier, not EM size */
+}
+pre .tag, code .tag, code.tag{
+	color:#00c; /* blue */
+}
+pre .str, code .str, code.str{
+	color:#090; /* green */
+}
+pre .comment, code .comment, code.comment, .comment .str, .comment .tag{
+	color:#777; /* gray */
+}
+/*
+.role-reference, .role-reference:link, .role-reference:visited {
+	background-color: #eee;
+}
+.state-reference, .state-reference:link, .state-reference:visited {
+	background-color: #ffc;
+}
+.property-reference, .property-reference:link, .property-reference:visited {
+	background-color: #ccf;
+}
+.widget-reference, .widget-reference:link, .widget-reference:visited {
+	background-color: #9f6;
+}
+*/
+.role-reference, .state-reference, .property-reference, .widget-reference, .design-pattern-reference {}
+.termref, a.termref:link {
+	color:#006400;
+	text-decoration:none;
+	font-style:italic;
+}
+a.termref:visited {
+	color:inherit;
+}
+a.termref:hover, a.termref:focus {
+	background-color: #fafad2;
+	color: #006400;
+}
+.empty {
+	display: none;
+}
+.note {
+	color:#444;
+	border:solid 1px #ccc;
+	margin:1em 0;
+	padding:1em 2em;
+}
+.ednote {
+	border:solid 3px #cca;
+	background-color:#ffd;
+	padding:0 0.8em;
+}
+.role-screenshot {
+	float: right;
+	margin-left: 1em;
+	margin-bottom: 1ex;
+}
+.role-screenshot p {
+	text-align: center;
+	font-size: smaller;
+}
+.image {
+	text-align: center;
+}
+.img {
+	margin-left: auto;
+	margin-right: auto;
+}
+.img p {
+	text-align: center;
+	font-weight: bold;
+	font-size: smaller;
+}
+.img-caption {
+	font-weight: bold;
+}
+/*
+dl.runin dt {
+	display: run-in;
+}
+dl.runin dt:after {
+	content: ": ";
+}
+*/
+dl.compact dt {
+	font-weight:normal;
+}
+/*
+dl.compact dd {
+	margin-left: 5em;
+}
+*/
+.rfc2119 {
+	font-weight: bold;
+	text-transform: uppercase;
+}
+.tocnum {}
+.section {}
+.todo {
+	background-color:#f99;
+}
+.issue {
+	background-color:#0c0;
+}
+abbr.symbol {
+	border-bottom:none;
+}
+
+.aref { 
+	font-family: monospace; 
+	font-weight: bold; 
+	color: #ff4500 !important;
+}
+
+/* prevent <dt> from butting up against previous <dd> in .termlist (terms.html) */
+.termlist dt {margin-top: 1em;}
+
+
+
+</style></head>
+<body><section class="role notoc" id="math" typeof="bibo:Chapter" resource="#math" property="bibo:hasPart">
+			<h4 class="role-name" title="math" aria-describedby="desc-math" id="math-0" resource="#math-0"><span property="xhv:role" resource="xhv:heading"><code>math</code> <span class="type-indicator">(role)</span><span class="permalink" typeof="bookmark"><a href="#math" aria-label="Permalink for math (role)" title="Permalink for math (role)" property="url"><span property="title" content="math (role)">&sect;</span></a></span></span></h4>
 			<div class="role-description" id="desc-math" role="definition">
 				<p>Content that represents a mathematical expression.</p>
 				<p>Content with the role <code>math</code> is intended to be marked up in an accessible format such as <cite><a href="https://www.w3.org/TR/MathML3/"><abbr title="Mathematical Markup Language">MathML</abbr></a></cite> [<cite><a class="bibref" href="#bib-MathML3">MathML3</a></cite>], or with another type of textual representation such as TeX or LaTeX, which can be converted to an accessible format by native browser implementations or a polyfill library.</p>
@@ -12,7 +275,7 @@
 				</div>
 </div>
 				<h4 id="mathml-example-with-embedded-tex-annotation">
-<abbr title="Mathematical Markup Language">MathML</abbr> Example with Embedded TeX Annotation<span class="permalink" typeof="bookmark"><a href="#desc-math" aria-label="Permalink for MathML Example with Embedded TeX Annotation" title="Permalink for MathML Example with Embedded TeX Annotation" property="url"><span property="title" content="MathML Example with Embedded TeX Annotation">§</span></a></span>
+<abbr title="Mathematical Markup Language">MathML</abbr> Example with Embedded TeX Annotation<span class="permalink" typeof="bookmark"><a href="#desc-math" aria-label="Permalink for MathML Example with Embedded TeX Annotation" title="Permalink for MathML Example with Embedded TeX Annotation" property="url"><span property="title" content="MathML Example with Embedded TeX Annotation">&sect;</span></a></span>
 </h4>
 				<div class="example">
 <div class="example-title marker"><span>Example 6</span></div>
@@ -25,15 +288,15 @@
     <span class="hljs-tag">&lt;<span class="hljs-name">mo</span>&gt;</span>=<span class="hljs-tag">&lt;/<span class="hljs-name">mo</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">mfrac</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-name">mrow</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">mo</span> <span class="hljs-attr">form</span>=<span class="hljs-string">"prefix"</span>&gt;</span>−<span class="hljs-tag">&lt;/<span class="hljs-name">mo</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">mo</span> <span class="hljs-attr">form</span>=<span class="hljs-string">"prefix"</span>&gt;</span>&minus;<span class="hljs-tag">&lt;/<span class="hljs-name">mo</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">mi</span>&gt;</span>b<span class="hljs-tag">&lt;/<span class="hljs-name">mi</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">mo</span>&gt;</span>±<span class="hljs-tag">&lt;/<span class="hljs-name">mo</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">mo</span>&gt;</span>&plusmn;<span class="hljs-tag">&lt;/<span class="hljs-name">mo</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">msqrt</span>&gt;</span>
           <span class="hljs-tag">&lt;<span class="hljs-name">msup</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">mi</span>&gt;</span>b<span class="hljs-tag">&lt;/<span class="hljs-name">mi</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">mn</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-name">mn</span>&gt;</span>
           <span class="hljs-tag">&lt;/<span class="hljs-name">msup</span>&gt;</span>
-          <span class="hljs-tag">&lt;<span class="hljs-name">mo</span>&gt;</span>−<span class="hljs-tag">&lt;/<span class="hljs-name">mo</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">mo</span>&gt;</span>&minus;<span class="hljs-tag">&lt;/<span class="hljs-name">mo</span>&gt;</span>
           <span class="hljs-tag">&lt;<span class="hljs-name">mn</span>&gt;</span>4<span class="hljs-tag">&lt;/<span class="hljs-name">mn</span>&gt;</span>
           <span class="hljs-tag">&lt;<span class="hljs-name">mo</span>&gt;</span>&amp;#x2062;<span class="hljs-comment">&lt;!-- &amp;InvisibleTimes; --&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">mo</span>&gt;</span>
           <span class="hljs-tag">&lt;<span class="hljs-name">mi</span>&gt;</span>a<span class="hljs-tag">&lt;/<span class="hljs-name">mi</span>&gt;</span>
@@ -53,12 +316,12 @@
   <span class="hljs-tag">&lt;/<span class="hljs-name">annotation</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">math</span>&gt;</span></pre>
 </div>
-				<h4 id="plain-html-or-polyfill-dom-result-of-the-mathml-quadratic-formula">Plain <abbr title="Hypertext Markup Language">HTML</abbr> or Polyfill <abbr title="Document Object Model">DOM</abbr> Result of the <abbr title="Mathematical Markup Language">MathML</abbr> Quadratic Formula<span class="permalink" typeof="bookmark"><a href="#desc-math" aria-label="Permalink for Plain HTML or Polyfill DOM Result of the MathML Quadratic Formula" title="Permalink for Plain HTML or Polyfill DOM Result of the MathML Quadratic Formula" property="url"><span property="title" content="Plain HTML or Polyfill DOM Result of the MathML Quadratic Formula">§</span></a></span>
+				<h4 id="plain-html-or-polyfill-dom-result-of-the-mathml-quadratic-formula">Plain <abbr title="Hypertext Markup Language">HTML</abbr> or Polyfill <abbr title="Document Object Model">DOM</abbr> Result of the <abbr title="Mathematical Markup Language">MathML</abbr> Quadratic Formula<span class="permalink" typeof="bookmark"><a href="#desc-math" aria-label="Permalink for Plain HTML or Polyfill DOM Result of the MathML Quadratic Formula" title="Permalink for Plain HTML or Polyfill DOM Result of the MathML Quadratic Formula" property="url"><span property="title" content="Plain HTML or Polyfill DOM Result of the MathML Quadratic Formula">&sect;</span></a></span>
 </h4>
 				<p>If a rendering engine does not support a native math format such as <abbr title="Mathematical Markup Language">MathML</abbr>, authors <em class="rfc2119" title="MAY">MAY</em> use JavaScript to downgrade the content to a format the browser can display, such as this <abbr title="Hypertext Markup Language">HTML</abbr> image using a data <abbr title="Uniform Resource Identifier">URI</abbr> and plain text alternative.</p>
 				<div class="example">
 <div class="example-title marker"><span>Example 7</span></div>
-<pre class="highlight hljs xml" aria-busy="false" aria-live="polite"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"math"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"..."</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"x=⟮−b±√⟮b²−4ac⟯⟯÷2a"</span>&gt;</span></pre>
+<pre class="highlight hljs xml" aria-busy="false" aria-live="polite"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"math"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"..."</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"x=&#10222;&minus;b&plusmn;&radic;&#10222;b&sup2;&minus;4ac&#10223;&#10223;&divide;2a"</span>&gt;</span></pre>
 </div>
 				<!--
 				<p class="ednote">Editor's note: Might need an RFC-2119 "should" requirement here to encourage AT to speak math approximations with high punctuation verbosity. Otherwise ambiguous characters like a forward slash (/) may not be spoken even when intended to be used interchangeably with the division sign character (&#247;).</p>
@@ -127,4 +390,5 @@
 					
 				</tbody>
 			</table>
-		</section>
+		</section></body>
+</html>

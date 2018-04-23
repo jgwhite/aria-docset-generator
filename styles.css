@@ -1,6 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
-<html>
-<!--Online page at https://www.w3.org/TR/wai-aria-1.1/#marquee--><head><style type="text/css">
+
 * { 
 	/* add default line-height so different fonts don't affect the rhythm of line-box height */
 	line-height:1.2; /* [sic] unitless multiplier, not EM size */
@@ -260,76 +258,3 @@ abbr.symbol {
 
 
 
-</style></head>
-<body><section class="role notoc" id="marquee" typeof="bibo:Chapter" resource="#marquee" property="bibo:hasPart">
-			<h4 class="role-name" title="marquee" aria-describedby="desc-marquee" id="marquee-0" resource="#marquee-0"><span property="xhv:role" resource="xhv:heading"><code>marquee</code> <span class="type-indicator">(role)</span><span class="permalink" typeof="bookmark"><a href="#marquee" aria-label="Permalink for marquee (role)" title="Permalink for marquee (role)" property="url"><span property="title" content="marquee (role)">&sect;</span></a></span></span></h4>
-			<div class="role-description" id="desc-marquee" role="definition">
-				<p>A type of <a href="#dfn-live-region" class="internalDFN" data-link-type="dfn">live region</a> where non-essential information changes frequently. See related <a href="#log" class="role-reference"><code>log</code></a>.</p>
-				<p>Common usages of <code>marquee</code> include stock tickers and ad banners. The primary difference between a <code>marquee</code> and a <code>log</code> is that logs usually have a meaningful order or sequence of important content changes.</p>
-				<p>Elements with the role <code>marquee</code> have an implicit <a href="#aria-live" class="property-reference"><code>aria-live</code></a> value of <code>off</code>.</p>
-			</div>
-			<table class="role-features">
-				<caption>Characteristics:</caption>
-				<thead>
-					<tr>
-						<th scope="col">Characteristic</th>
-						<th scope="col">Value</th>
-					</tr>
-				</thead>
-				<tbody>
-					
-					<tr>
-						<th class="role-parent-head" scope="row">Superclass Role:</th>
-						<td class="role-parent"><a href="#section" class="role-reference"><code>section</code></a></td>
-					</tr>
-					
-					
-					
-					
-					
-					
-					
-					<tr>
-						<th class="role-inherited-head" scope="row">Inherited States and Properties:</th>
-						<td class="role-inherited">
-<ul>
-<li><a href="#aria-atomic" class="property-reference"><code>aria-atomic</code></a></li>
-<li><a href="#aria-busy" class="state-reference"><code>aria-busy (state)</code></a></li>
-<li><a href="#aria-controls" class="property-reference"><code>aria-controls</code></a></li>
-<li><a href="#aria-current" class="state-reference"><code>aria-current (state)</code></a></li>
-<li><a href="#aria-describedby" class="property-reference"><code>aria-describedby</code></a></li>
-<li><a href="#aria-details" class="property-reference"><code>aria-details</code></a></li>
-<li><a href="#aria-disabled" class="state-reference"><code>aria-disabled (state)</code></a></li>
-<li><a href="#aria-dropeffect" class="property-reference"><code>aria-dropeffect</code></a></li>
-<li><a href="#aria-errormessage" class="property-reference"><code>aria-errormessage</code></a></li>
-<li><a href="#aria-expanded" class="state-reference"><code>aria-expanded (state)</code></a></li>
-<li><a href="#aria-flowto" class="property-reference"><code>aria-flowto</code></a></li>
-<li><a href="#aria-grabbed" class="state-reference"><code>aria-grabbed (state)</code></a></li>
-<li><a href="#aria-haspopup" class="property-reference"><code>aria-haspopup</code></a></li>
-<li><a href="#aria-hidden" class="state-reference"><code>aria-hidden (state)</code></a></li>
-<li><a href="#aria-invalid" class="state-reference"><code>aria-invalid (state)</code></a></li>
-<li><a href="#aria-keyshortcuts" class="property-reference"><code>aria-keyshortcuts</code></a></li>
-<li><a href="#aria-label" class="property-reference"><code>aria-label</code></a></li>
-<li><a href="#aria-labelledby" class="property-reference"><code>aria-labelledby</code></a></li>
-<li><a href="#aria-live" class="property-reference"><code>aria-live</code></a></li>
-<li><a href="#aria-owns" class="property-reference"><code>aria-owns</code></a></li>
-<li><a href="#aria-relevant" class="property-reference"><code>aria-relevant</code></a></li>
-<li><a href="#aria-roledescription" class="property-reference"><code>aria-roledescription</code></a></li>
-</ul>
-</td>
-					</tr>
-					<tr>
-						<th class="role-namefrom-head" scope="row">Name From:</th>
-                        <td class="role-namefrom">author</td>
-					</tr>
-					<tr>
-						<th class="role-namerequired-head" scope="row">Accessible Name Required:</th>
-						<td class="role-namerequired">True</td>
-					</tr>
-					
-					
-					
-				</tbody>
-			</table>
-		</section></body>
-</html>
