@@ -95,7 +95,7 @@ IO.popen(["sqlite3", INDEX_PATH], "w") do |db|
 
   SOURCE_DOC.css("section.property").each do |section|
     name = section.at_css("code").text
-    type = "Attribute"
+    type = "Property"
     fn = section["resource"][1..-1]
     path = "#{fn}.html"
 
