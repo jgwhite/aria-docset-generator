@@ -1,0 +1,3 @@
+#!/bin/sh
+
+zip -r aria.docset.zip aria.docset -x "*.DS_Store"
