@@ -20,8 +20,29 @@ SOURCE_URL = "https://www.w3.org/TR/wai-aria-1.1/"
 SOURCE_DOC = Nokogiri::HTML(open(SOURCE_URL))
 
 def section_to_html(section)
-  section.at_css("span.permalink").remove
   resource = section["resource"]
+
+  section.at_css("span.permalink").remove
+
+  section.css("a.role-reference").each do |a|
+    name = a["href"][1..-1]
+    a["href"] = "#{name}.html"
+  end
+
+  section.css("a.state-reference").each do |a|
+    name = a["href"][1..-1]
+    a["href"] = "#{name}.html"
+  end
+
+  section.css("a.property-reference").each do |a|
+    name = a["href"][1..-1]
+    a["href"] = "#{name}.html"
+  end
+
+  section.css("a[href^='#']").each do |a|
+    a["href"] = SOURCE_URL + a["href"]
+  end
+
   builder = Nokogiri::HTML::Builder.new do |b|
     b.html do
       b.comment "Online page at #{SOURCE_URL}#{resource}"
@@ -75,6 +96,21 @@ IO.popen(["sqlite3", INDEX_PATH], "w") do |db|
   SOURCE_DOC.css("section.property").each do |section|
     name = section.at_css("code").text
     type = "Attribute"
+    fn = section["resource"][1..-1]
+    path = "#{fn}.html"
+
+    puts "==> Adding #{name}"
+
+    File.open(File.join(DOCUMENTS_PATH, path), "w") do |file|
+      file << section_to_html(section)
+    end
+
+    db << "INSERT OR IGNORE INTO searchIndex(name, type, path) VALUES ('#{name}', '#{type}', '#{path}');\n"
+  end
+
+  SOURCE_DOC.css("section.state").each do |section|
+    name = section.at_css("code").text
+    type = "Trait"
     fn = section["resource"][1..-1]
     path = "#{fn}.html"
 
