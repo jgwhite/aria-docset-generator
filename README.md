@@ -2,6 +2,8 @@
 
 Generates [ARIA 1.1] docset bundles for [Dash].
 
+![Screenshot](screenshot.png)
+
 ## Downloading Docsets
 
 See the [Releases] page.
