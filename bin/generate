@@ -24,24 +24,7 @@ def section_to_html(section)
 
   section.at_css("span.permalink").remove
 
-  section.css("a.role-reference").each do |a|
-    name = a["href"][1..-1]
-    a["href"] = "#{name}.html"
-  end
-
-  section.css("a.state-reference").each do |a|
-    name = a["href"][1..-1]
-    a["href"] = "#{name}.html"
-  end
-
-  section.css("a.property-reference").each do |a|
-    name = a["href"][1..-1]
-    a["href"] = "#{name}.html"
-  end
-
-  section.css("a[href^='#']").each do |a|
-    a["href"] = SOURCE_URL + a["href"]
-  end
+  normalize_links(section)
 
   builder = Nokogiri::HTML::Builder.new do |b|
     b.html do
@@ -58,6 +41,60 @@ def section_to_html(section)
   end
 
   builder.to_html
+end
+
+def definition_to_html(dt)
+  id = dt.at_css("dfn")["id"]
+  dd = dt.next_element
+
+  [dt, dd].each do |e|
+    normalize_links(e)
+  end
+
+  builder = Nokogiri::HTML::Builder.new do |b|
+    b.html do
+      b.comment "Online page at #{SOURCE_URL}##{id}"
+      b.head do
+        b.style(type: "text/css") do
+          b.text CSS
+        end
+      end
+      b.body do
+        b.h2 do
+          b << dt.at_css("dfn").children
+        end
+        b << dd.children
+      end
+    end
+  end
+
+  builder.to_html
+end
+
+def normalize_links(element)
+  element.css("a[href^='#dfn-']").each do |a|
+    id = a["href"][1..-1]
+    a["href"] = "#{id}.html"
+  end
+
+  element.css("a.role-reference").each do |a|
+    id = a["href"][1..-1]
+    a["href"] = "#{id}.html"
+  end
+
+  element.css("a.state-reference").each do |a|
+    id = a["href"][1..-1]
+    a["href"] = "#{id}.html"
+  end
+
+  element.css("a.property-reference").each do |a|
+    id = a["href"][1..-1]
+    a["href"] = "#{id}.html"
+  end
+
+  element.css("a[href^='#']").each do |a|
+    a["href"] = SOURCE_URL + a["href"]
+  end
 end
 
 puts "==> Removing existing build"
@@ -77,6 +114,20 @@ IO.popen(["sqlite3", INDEX_PATH], "w") do |db|
   puts "==> Creating Table"
   db << "CREATE TABLE searchIndex(id INTEGER PRIMARY KEY, name TEXT, type TEXT, path TEXT);\n"
   db << "CREATE UNIQUE INDEX anchor ON searchIndex (name, type, path);\n"
+
+  SOURCE_DOC.css(".termlist > dt").each do |dt|
+    type = "Define"
+    id = dt.at_css("dfn")["id"]
+    name = dt.at_css("dfn").text
+    path = "#{id}.html"
+    puts "==> Adding #{name} (#{id})"
+
+    File.open(File.join(DOCUMENTS_PATH, path), "w") do |file|
+      file << definition_to_html(dt)
+    end
+
+    db << "INSERT OR IGNORE INTO searchIndex(name, type, path) VALUES ('#{name}', '#{type}', '#{path}');\n"
+  end
 
   SOURCE_DOC.css("section.role").each do |section|
     name = section.at_css("code").text
